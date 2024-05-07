@@ -1,0 +1,161 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.7.0
+2 info using node@v21.7.3
+3 silly config:load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config:load:file:/home/container/.npmrc
+5 silly config:load:file:/usr/local/etc/npmrc
+6 verbose title npm install
+7 verbose argv "install"
+8 verbose logfile logs-max:10 dir:/home/container/.npm/_logs/2024-05-06T16_58_04_357Z-
+9 verbose logfile /home/container/.npm/_logs/2024-05-06T16_58_04_357Z-debug-0.log
+10 silly logfile done cleaning log files
+11 silly idealTree buildDeps
+12 silly reify mark retired [
+12 silly reify   '/home/container/node_modules/acorn',
+12 silly reify   '/home/container/node_modules/.bin/acorn'
+12 silly reify ]
+13 silly reify mark retired [
+13 silly reify   '/home/container/node_modules/btoa',
+13 silly reify   '/home/container/node_modules/.bin/btoa'
+13 silly reify ]
+14 silly reify mark retired [
+14 silly reify   '/home/container/node_modules/ejs',
+14 silly reify   '/home/container/node_modules/.bin/ejs'
+14 silly reify ]
+15 silly reify mark retired [
+15 silly reify   '/home/container/node_modules/eslint',
+15 silly reify   '/home/container/node_modules/.bin/eslint'
+15 silly reify ]
+16 silly reify mark retired [
+16 silly reify   '/home/container/node_modules/fast-xml-parser',
+16 silly reify   '/home/container/node_modules/.bin/fxparser'
+16 silly reify ]
+17 silly reify mark retired [
+17 silly reify   '/home/container/node_modules/jake',
+17 silly reify   '/home/container/node_modules/.bin/jake'
+17 silly reify ]
+18 silly reify mark retired [
+18 silly reify   '/home/container/node_modules/js-yaml',
+18 silly reify   '/home/container/node_modules/.bin/js-yaml'
+18 silly reify ]
+19 silly reify mark retired [
+19 silly reify   '/home/container/node_modules/mime',
+19 silly reify   '/home/container/node_modules/.bin/mime'
+19 silly reify ]
+20 silly reify mark retired [
+20 silly reify   '/home/container/node_modules/node',
+20 silly reify   '/home/container/node_modules/.bin/node'
+20 silly reify ]
+21 silly reify mark retired [
+21 silly reify   '/home/container/node_modules/node-gyp-build',
+21 silly reify   '/home/container/node_modules/.bin/node-gyp-build',
+21 silly reify   '/home/container/node_modules/.bin/node-gyp-build-optional',
+21 silly reify   '/home/container/node_modules/.bin/node-gyp-build-test'
+21 silly reify ]
+22 silly reify mark retired [
+22 silly reify   '/home/container/node_modules/nodemon',
+22 silly reify   '/home/container/node_modules/.bin/nodemon'
+22 silly reify ]
+23 silly reify mark retired [
+23 silly reify   '/home/container/node_modules/nopt',
+23 silly reify   '/home/container/node_modules/.bin/nopt'
+23 silly reify ]
+24 silly reify mark retired [
+24 silly reify   '/home/container/node_modules/pino',
+24 silly reify   '/home/container/node_modules/.bin/pino'
+24 silly reify ]
+25 silly reify mark retired [
+25 silly reify   '/home/container/node_modules/pino-pretty',
+25 silly reify   '/home/container/node_modules/.bin/pino-pretty'
+25 silly reify ]
+26 silly reify mark retired [
+26 silly reify   '/home/container/node_modules/prettier',
+26 silly reify   '/home/container/node_modules/.bin/prettier'
+26 silly reify ]
+27 silly reify mark retired [
+27 silly reify   '/home/container/node_modules/rimraf',
+27 silly reify   '/home/container/node_modules/.bin/rimraf'
+27 silly reify ]
+28 silly reify mark retired [
+28 silly reify   '/home/container/node_modules/semver',
+28 silly reify   '/home/container/node_modules/.bin/semver'
+28 silly reify ]
+29 silly reify mark retired [
+29 silly reify   '/home/container/node_modules/touch',
+29 silly reify   '/home/container/node_modules/.bin/nodetouch'
+29 silly reify ]
+30 silly reify mark retired [
+30 silly reify   '/home/container/node_modules/uuid',
+30 silly reify   '/home/container/node_modules/.bin/uuid'
+30 silly reify ]
+31 silly reify mark retired [
+31 silly reify   '/home/container/node_modules/which',
+31 silly reify   '/home/container/node_modules/.bin/node-which'
+31 silly reify ]
+32 silly reify moves {
+32 silly reify   '/home/container/node_modules/acorn': '/home/container/node_modules/.acorn-2AtqRIPU',
+32 silly reify   '/home/container/node_modules/.bin/acorn': '/home/container/node_modules/.bin/.acorn-LuH4a0XZ',
+32 silly reify   '/home/container/node_modules/btoa': '/home/container/node_modules/.btoa-HjTUuMfb',
+32 silly reify   '/home/container/node_modules/.bin/btoa': '/home/container/node_modules/.bin/.btoa-bh5bVYWw',
+32 silly reify   '/home/container/node_modules/ejs': '/home/container/node_modules/.ejs-IsQKHn66',
+32 silly reify   '/home/container/node_modules/.bin/ejs': '/home/container/node_modules/.bin/.ejs-paLIrwkl',
+32 silly reify   '/home/container/node_modules/eslint': '/home/container/node_modules/.eslint-3aJuVs85',
+32 silly reify   '/home/container/node_modules/.bin/eslint': '/home/container/node_modules/.bin/.eslint-qjYtQVbj',
+32 silly reify   '/home/container/node_modules/fast-xml-parser': '/home/container/node_modules/.fast-xml-parser-9InGuqkU',
+32 silly reify   '/home/container/node_modules/.bin/fxparser': '/home/container/node_modules/.bin/.fxparser-8II6uP1h',
+32 silly reify   '/home/container/node_modules/jake': '/home/container/node_modules/.jake-3kTaSEsG',
+32 silly reify   '/home/container/node_modules/.bin/jake': '/home/container/node_modules/.bin/.jake-txfguRIw',
+32 silly reify   '/home/container/node_modules/js-yaml': '/home/container/node_modules/.js-yaml-MVyYueDY',
+32 silly reify   '/home/container/node_modules/.bin/js-yaml': '/home/container/node_modules/.bin/.js-yaml-VQZEtGwl',
+32 silly reify   '/home/container/node_modules/mime': '/home/container/node_modules/.mime-OqpHjQqc',
+32 silly reify   '/home/container/node_modules/.bin/mime': '/home/container/node_modules/.bin/.mime-eoW5cL08',
+32 silly reify   '/home/container/node_modules/node': '/home/container/node_modules/.node-xQWcBWac',
+32 silly reify   '/home/container/node_modules/.bin/node': '/home/container/node_modules/.bin/.node-xeHKn4se',
+32 silly reify   '/home/container/node_modules/node-gyp-build': '/home/container/node_modules/.node-gyp-build-KpjzfxsN',
+32 silly reify   '/home/container/node_modules/.bin/node-gyp-build': '/home/container/node_modules/.bin/.node-gyp-build-w0yexqY9',
+32 silly reify   '/home/container/node_modules/.bin/node-gyp-build-optional': '/home/container/node_modules/.bin/.node-gyp-build-optional-qOuNpizP',
+32 silly reify   '/home/container/node_modules/.bin/node-gyp-build-test': '/home/container/node_modules/.bin/.node-gyp-build-test-XOSJe86j',
+32 silly reify   '/home/container/node_modules/nodemon': '/home/container/node_modules/.nodemon-4Mpe9Z9R',
+32 silly reify   '/home/container/node_modules/.bin/nodemon': '/home/container/node_modules/.bin/.nodemon-fIFrvQqG',
+32 silly reify   '/home/container/node_modules/nopt': '/home/container/node_modules/.nopt-IWywp9kP',
+32 silly reify   '/home/container/node_modules/.bin/nopt': '/home/container/node_modules/.bin/.nopt-PFHIzoR7',
+32 silly reify   '/home/container/node_modules/pino': '/home/container/node_modules/.pino-W4hvP06Q',
+32 silly reify   '/home/container/node_modules/.bin/pino': '/home/container/node_modules/.bin/.pino-XdK6afH4',
+32 silly reify   '/home/container/node_modules/pino-pretty': '/home/container/node_modules/.pino-pretty-0J7cDBSz',
+32 silly reify   '/home/container/node_modules/.bin/pino-pretty': '/home/container/node_modules/.bin/.pino-pretty-Pqsii8h9',
+32 silly reify   '/home/container/node_modules/prettier': '/home/container/node_modules/.prettier-hxWOwadY',
+32 silly reify   '/home/container/node_modules/.bin/prettier': '/home/container/node_modules/.bin/.prettier-rZdNnMVU',
+32 silly reify   '/home/container/node_modules/rimraf': '/home/container/node_modules/.rimraf-1HSCxFRz',
+32 silly reify   '/home/container/node_modules/.bin/rimraf': '/home/container/node_modules/.bin/.rimraf-jPGCiEH2',
+32 silly reify   '/home/container/node_modules/semver': '/home/container/node_modules/.semver-clkkOKMn',
+32 silly reify   '/home/container/node_modules/.bin/semver': '/home/container/node_modules/.bin/.semver-6FrAJfdb',
+32 silly reify   '/home/container/node_modules/touch': '/home/container/node_modules/.touch-bPayF5RA',
+32 silly reify   '/home/container/node_modules/.bin/nodetouch': '/home/container/node_modules/.bin/.nodetouch-Ff5PEFQc',
+32 silly reify   '/home/container/node_modules/uuid': '/home/container/node_modules/.uuid-bJQR8Pxz',
+32 silly reify   '/home/container/node_modules/.bin/uuid': '/home/container/node_modules/.bin/.uuid-GjpJUL4x',
+32 silly reify   '/home/container/node_modules/which': '/home/container/node_modules/.which-a0RAFcK4',
+32 silly reify   '/home/container/node_modules/.bin/node-which': '/home/container/node_modules/.bin/.node-which-YffGGleL'
+32 silly reify }
+33 verbose stack Error: ENOTEMPTY: directory not empty, rename '/home/container/node_modules/acorn' -> '/home/container/node_modules/.acorn-2AtqRIPU'
+33 verbose stack     at async Object.rename (node:internal/fs/promises:783:10)
+33 verbose stack     at async moveFile (/usr/local/lib/node_modules/npm/node_modules/@npmcli/fs/lib/move-file.js:30:5)
+33 verbose stack     at async Promise.allSettled (index 0)
+33 verbose stack     at async [reifyPackages] (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:325:11)
+33 verbose stack     at async Arborist.reify (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:142:5)
+33 verbose stack     at async Install.exec (/usr/local/lib/node_modules/npm/lib/commands/install.js:150:5)
+33 verbose stack     at async module.exports (/usr/local/lib/node_modules/npm/lib/cli/entry.js:74:5)
+34 verbose cwd /home/container
+35 verbose Linux 5.15.0-101-generic
+36 verbose node v21.7.3
+37 verbose npm  v10.7.0
+38 error code ENOTEMPTY
+39 error syscall rename
+40 error path /home/container/node_modules/acorn
+41 error dest /home/container/node_modules/.acorn-2AtqRIPU
+42 error errno -39
+43 error ENOTEMPTY: directory not empty, rename '/home/container/node_modules/acorn' -> '/home/container/node_modules/.acorn-2AtqRIPU'
+44 verbose exit -39
+45 verbose code -39
+46 silly unfinished npm timer reify 1715014685060
+47 silly unfinished npm timer reify:retireShallow 1715014686241
+48 error A complete log of this run can be found in: /home/container/.npm/_logs/2024-05-06T16_58_04_357Z-debug-0.log

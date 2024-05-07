@@ -1,0 +1,21 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.7.0
+2 info using node@v21.7.3
+3 silly config:load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config:load:file:/home/container/node_modules/node/.npmrc
+5 silly config:load:file:/home/container/.npmrc
+6 silly config:load:file:/usr/local/etc/npmrc
+7 verbose title npm install node-linux-x64@18.18.2
+8 verbose argv "install" "--no-save" "node-linux-x64@18.18.2"
+9 verbose logfile logs-max:10 dir:/home/container/.npm/_logs/2024-05-06T16_14_22_441Z-
+10 verbose logfile /home/container/.npm/_logs/2024-05-06T16_14_22_441Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly idealTree buildDeps
+13 silly fetch manifest node-linux-x64@18.18.2
+14 http fetch GET 200 https://registry.npmjs.org/node-linux-x64 606ms (cache miss)
+15 silly placeDep ROOT node-linux-x64@18.18.2 OK for: node@18.18.2 want: 18.18.2
+16 silly reify moves {}
+17 silly audit bulk request { 'node-bin-setup': [ '1.1.3' ], 'node-linux-x64': [ '18.18.2' ] }
+18 silly tarball no local data for node-linux-x64@https://registry.npmjs.org/node-linux-x64/-/node-linux-x64-18.18.2.tgz. Extracting by manifest.
+19 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 199ms
+20 silly audit report {}
