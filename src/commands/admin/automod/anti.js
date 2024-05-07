@@ -150,7 +150,7 @@ module.exports = {
       response = await antiMassMention(
         settings,
         interaction.options.getString("status"),
-        interaction.options.getInteger("threshold"),
+        interaction.options.getInteger("threshold")
       );
     } else response = "Invalid command usage!";
 

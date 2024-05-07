@@ -1,7 +1,7 @@
 const { EMBED_COLORS } = require("@root/config");
 
 /**
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildMember} member
  */
 module.exports = async (member) => {
   // Permissions
@@ -11,7 +11,7 @@ module.exports = async (member) => {
 
   // Search with all giveaways
   const giveaways = member.client.giveawaysManager.giveaways.filter(
-    (g) => g.guildId === member.guild.id && g.ended === false,
+    (g) => g.guildId === member.guild.id && g.ended === false
   );
 
   // No giveaways

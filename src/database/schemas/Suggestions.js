@@ -34,7 +34,7 @@ const Schema = new mongoose.Schema(
       createdAt: "created_at",
       updatedAt: "updated_at",
     },
-  },
+  }
 );
 
 const Model = mongoose.model("suggestions", Schema);
@@ -64,7 +64,7 @@ module.exports = {
         $push: {
           status_updates: { user_id: memberId, status: "DELETED", reason },
         },
-      },
+      }
     );
   },
 };

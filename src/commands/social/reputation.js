@@ -125,7 +125,7 @@ async function viewReputation(target) {
         name: "Received",
         value: userData.reputation?.received.toString(),
         inline: true,
-      },
+      }
     );
 
   return { embeds: [embed] };

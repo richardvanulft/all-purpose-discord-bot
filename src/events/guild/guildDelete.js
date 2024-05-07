@@ -2,8 +2,8 @@ const { EmbedBuilder } = require("discord.js");
 const { getSettings } = require("@schemas/Guild");
 
 /**
- * @param {import("@src/structures").BotClient} client
- * @param {import("discord.js").Guild} guild
+ * @param {import('@src/structures').BotClient} client
+ * @param {import('discord.js').Guild} guild
  */
 module.exports = async (client, guild) => {
   if (!guild.available) return;
@@ -48,7 +48,7 @@ module.exports = async (client, guild) => {
         name: "Members",
         value: `\`\`\`yaml\n${guild.memberCount}\`\`\``,
         inline: false,
-      },
+      }
     )
     .setFooter({ text: `Guild #${client.guilds.cache.size}` });
 

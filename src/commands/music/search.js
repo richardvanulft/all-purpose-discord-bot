@@ -72,7 +72,7 @@ async function search({ member, guild, channel }, query) {
   let res;
   try {
     res = await guild.client.musicManager.rest.loadTracks(
-      /^https?:\/\//.test(query) ? query : `${search_prefix[MUSIC.DEFAULT_SOURCE]}:${query}`,
+      /^https?:\/\//.test(query) ? query : `${search_prefix[MUSIC.DEFAULT_SOURCE]}:${query}`
     );
   } catch (err) {
     return "🚫 There was an error while searching";
@@ -139,11 +139,11 @@ async function search({ member, guild, channel }, query) {
               "`" +
               prettyMs(
                 res.tracks.map((t) => t.info.length).reduce((a, b) => a + b, 0),
-                { colonNotation: true },
+                { colonNotation: true }
               ) +
               "`",
             inline: true,
-          },
+          }
         )
         .setFooter({ text: `Requested By: ${member.user.username}` });
       break;
@@ -163,7 +163,7 @@ async function search({ member, guild, channel }, query) {
           .setCustomId("search-results")
           .setPlaceholder("Choose Search Results")
           .setMaxValues(max)
-          .addOptions(options),
+          .addOptions(options)
       );
 
       const tempEmbed = new EmbedBuilder()

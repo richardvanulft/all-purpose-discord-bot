@@ -2,7 +2,7 @@ const { EmbedBuilder } = require("discord.js");
 const { EMBED_COLORS } = require("@root/config");
 
 /**
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildMember} member
  */
 module.exports = (member) => {
   let color = member.displayHexColor;
@@ -44,7 +44,7 @@ module.exports = (member) => {
       {
         name: "Avatar-URL",
         value: member.user.displayAvatarURL({ extension: "png" }),
-      },
+      }
     )
     .setFooter({ text: `Requested by ${member.user.tag}` })
     .setTimestamp(Date.now());

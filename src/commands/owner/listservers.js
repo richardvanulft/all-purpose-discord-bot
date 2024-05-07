@@ -53,7 +53,7 @@ module.exports = {
         .setCustomId("nxtBtn")
         .setEmoji("➡️")
         .setStyle(ButtonStyle.Secondary)
-        .setDisabled(totalPages === 1),
+        .setDisabled(totalPages === 1)
     );
     let buttonsRow = new ActionRowBuilder().addComponents(components);
 
@@ -81,7 +81,7 @@ module.exports = {
       let components = [];
       components.push(
         ButtonBuilder.from(buttonsRow.components[0]).setDisabled(currentPage === 1),
-        ButtonBuilder.from(buttonsRow.components[1]).setDisabled(currentPage === totalPages),
+        ButtonBuilder.from(buttonsRow.components[1]).setDisabled(currentPage === totalPages)
       );
       buttonsRow = new ActionRowBuilder().addComponents(components);
       return embed;

@@ -59,7 +59,7 @@ module.exports = {
 };
 
 /**
- * @param {import("discord.js").Guild} guild
+ * @param {import('discord.js').Guild} guild
  * @param {string} match
  */
 async function getMatchingBans(guild, match) {
@@ -89,16 +89,16 @@ async function getMatchingBans(guild, match) {
   }
 
   const menuRow = new ActionRowBuilder().addComponents(
-    new StringSelectMenuBuilder().setCustomId("unban-menu").setPlaceholder("Choose a user to unban").addOptions(options),
+    new StringSelectMenuBuilder().setCustomId("unban-menu").setPlaceholder("Choose a user to unban").addOptions(options)
   );
 
   return { content: "Please select a user you wish to unban", components: [menuRow] };
 }
 
 /**
- * @param {import("discord.js").GuildMember} issuer
+ * @param {import('discord.js').GuildMember} issuer
  * @param {string} reason
- * @param {import("discord.js").Message} sent
+ * @param {import('discord.js').Message} sent
  */
 async function waitForBan(issuer, reason, sent) {
   const collector = sent.channel.createMessageComponentCollector({

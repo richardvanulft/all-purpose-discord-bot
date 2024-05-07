@@ -4,7 +4,7 @@ const { stripIndent } = require("common-tags");
 const channelTypes = require("@helpers/channelTypes");
 
 /**
- * @param {import("discord.js").GuildChannel} channel
+ * @param {import('discord.js').GuildChannel} channel
  */
 module.exports = (channel) => {
   const { id, name, parent, position, type } = channel;

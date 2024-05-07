@@ -50,7 +50,7 @@ module.exports = {
 };
 
 /**
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildMember} member
  * @param {string} suggestion
  * @param {object} settings
  */
@@ -70,14 +70,14 @@ async function suggest(member, suggestion, settings) {
 
         **Submitter** 
         ${member.user.username} [${member.id}]
-      `,
+      `
     )
     .setTimestamp();
 
   let buttonsRow = new ActionRowBuilder().addComponents(
     new ButtonBuilder().setCustomId("SUGGEST_APPROVE").setLabel("Approve").setStyle(ButtonStyle.Success),
     new ButtonBuilder().setCustomId("SUGGEST_REJECT").setLabel("Reject").setStyle(ButtonStyle.Danger),
-    new ButtonBuilder().setCustomId("SUGGEST_DELETE").setLabel("Delete").setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId("SUGGEST_DELETE").setLabel("Delete").setStyle(ButtonStyle.Secondary)
   );
 
   try {

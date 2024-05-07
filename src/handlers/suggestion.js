@@ -14,7 +14,7 @@ const {
 const { stripIndents } = require("common-tags");
 
 /**
- * @param {import("discord.js").Message} message
+ * @param {import('discord.js').Message} message
  */
 const getStats = (message) => {
   const upVotes = (message.reactions.resolve(SUGGESTIONS.EMOJI.UP_VOTE)?.count || 1) - 1;
@@ -50,8 +50,8 @@ const hasPerms = (member, settings) => {
 };
 
 /**
- * @param {import("discord.js").GuildMember} member
- * @param {import("discord.js").TextBasedChannel} channel
+ * @param {import('discord.js').GuildMember} member
+ * @param {import('discord.js').TextBasedChannel} channel
  * @param {string} messageId
  * @param {string} [reason]
  */
@@ -68,7 +68,7 @@ async function approveSuggestion(member, channel, messageId, reason) {
   if (doc.status === "APPROVED") return "Suggestion already approved";
 
   /**
-   * @type {import("discord.js").Message}
+   * @type {import('discord.js').Message}
    */
   let message;
   try {
@@ -84,7 +84,7 @@ async function approveSuggestion(member, channel, messageId, reason) {
       .setStyle(ButtonStyle.Success)
       .setDisabled(true),
     new ButtonBuilder().setCustomId("SUGGEST_REJECT").setLabel("Reject").setStyle(ButtonStyle.Danger),
-    new ButtonBuilder().setCustomId("SUGGEST_DELETE").setLabel("Delete").setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId("SUGGEST_DELETE").setLabel("Delete").setStyle(ButtonStyle.Secondary)
   );
 
   const approvedEmbed = new EmbedBuilder()
@@ -144,8 +144,8 @@ async function approveSuggestion(member, channel, messageId, reason) {
 }
 
 /**
- * @param {import("discord.js").GuildMember} member
- * @param {import("discord.js").TextBasedChannel} channel
+ * @param {import('discord.js').GuildMember} member
+ * @param {import('discord.js').TextBasedChannel} channel
  * @param {string} messageId
  * @param {string} [reason]
  */
@@ -171,7 +171,7 @@ async function rejectSuggestion(member, channel, messageId, reason) {
   let buttonsRow = new ActionRowBuilder().addComponents(
     new ButtonBuilder().setCustomId("SUGGEST_APPROVE").setLabel("Approve").setStyle(ButtonStyle.Success),
     new ButtonBuilder().setCustomId("SUGGEST_REJECT").setLabel("Reject").setStyle(ButtonStyle.Danger).setDisabled(true),
-    new ButtonBuilder().setCustomId("SUGGEST_DELETE").setLabel("Delete").setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId("SUGGEST_DELETE").setLabel("Delete").setStyle(ButtonStyle.Secondary)
   );
 
   const rejectedEmbed = new EmbedBuilder()
@@ -232,8 +232,8 @@ async function rejectSuggestion(member, channel, messageId, reason) {
 }
 
 /**
- * @param {import("discord.js").GuildMember} member
- * @param {import("discord.js").TextBasedChannel} channel
+ * @param {import('discord.js').GuildMember} member
+ * @param {import('discord.js').TextBasedChannel} channel
  * @param {string} messageId
  * @param {string} [reason]
  */
@@ -255,7 +255,7 @@ async function deleteSuggestion(member, channel, messageId, reason) {
 }
 
 /**
- * @param {import("discord.js").ButtonInteraction} interaction
+ * @param {import('discord.js').ButtonInteraction} interaction
  */
 async function handleApproveBtn(interaction) {
   await interaction.showModal(
@@ -271,12 +271,12 @@ async function handleApproveBtn(interaction) {
             .setMinLength(4),
         ]),
       ],
-    }),
+    })
   );
 }
 
 /**
- * @param {import("discord.js").ModalSubmitInteraction} modal
+ * @param {import('discord.js').ModalSubmitInteraction} modal
  */
 async function handleApproveModal(modal) {
   await modal.deferReply({ ephemeral: true });
@@ -286,7 +286,7 @@ async function handleApproveModal(modal) {
 }
 
 /**
- * @param {import("discord.js").ButtonInteraction} interaction
+ * @param {import('discord.js').ButtonInteraction} interaction
  */
 async function handleRejectBtn(interaction) {
   await interaction.showModal(
@@ -302,12 +302,12 @@ async function handleRejectBtn(interaction) {
             .setMinLength(4),
         ]),
       ],
-    }),
+    })
   );
 }
 
 /**
- * @param {import("discord.js").ModalSubmitInteraction} modal
+ * @param {import('discord.js').ModalSubmitInteraction} modal
  */
 async function handleRejectModal(modal) {
   await modal.deferReply({ ephemeral: true });
@@ -317,7 +317,7 @@ async function handleRejectModal(modal) {
 }
 
 /**
- * @param {import("discord.js").ButtonInteraction} interaction
+ * @param {import('discord.js').ButtonInteraction} interaction
  */
 async function handleDeleteBtn(interaction) {
   await interaction.showModal(
@@ -333,12 +333,12 @@ async function handleDeleteBtn(interaction) {
             .setMinLength(4),
         ]),
       ],
-    }),
+    })
   );
 }
 
 /**
- * @param {import("discord.js").ModalSubmitInteraction} modal
+ * @param {import('discord.js').ModalSubmitInteraction} modal
  */
 async function handleDeleteModal(modal) {
   await modal.deferReply({ ephemeral: true });

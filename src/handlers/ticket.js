@@ -20,7 +20,7 @@ const OPEN_PERMS = ["ManageChannels"];
 const CLOSE_PERMS = ["ManageChannels", "ReadMessageHistory"];
 
 /**
- * @param {import("discord.js").Channel} channel
+ * @param {import('discord.js').Channel} channel
  */
 function isTicketChannel(channel) {
   return (
@@ -32,14 +32,14 @@ function isTicketChannel(channel) {
 }
 
 /**
- * @param {import("discord.js").Guild} guild
+ * @param {import('discord.js').Guild} guild
  */
 function getTicketChannels(guild) {
   return guild.channels.cache.filter((ch) => isTicketChannel(ch));
 }
 
 /**
- * @param {import("discord.js").Guild} guild
+ * @param {import('discord.js').Guild} guild
  * @param {string} userId
  */
 function getExistingTicketChannel(guild, userId) {
@@ -48,21 +48,20 @@ function getExistingTicketChannel(guild, userId) {
 }
 
 /**
- * @param {import("discord.js").BaseGuildTextChannel} channel
+ * @param {import('discord.js').BaseGuildTextChannel} channel
  */
 async function parseTicketDetails(channel) {
   if (!channel.topic) return;
   const split = channel.topic?.split("|");
   const userId = split[1];
   const catName = split[2] || "Default";
-  const user = await channel.client.users.fetch(userId, { cache: false }).catch(() => {
-  });
+  const user = await channel.client.users.fetch(userId, { cache: false }).catch(() => {});
   return { user, catName };
 }
 
 /**
- * @param {import("discord.js").BaseGuildTextChannel} channel
- * @param {import("discord.js").User} closedBy
+ * @param {import('discord.js').BaseGuildTextChannel} channel
+ * @param {import('discord.js').User} closedBy
  * @param {string} [reason]
  */
 async function closeTicket(channel, closedBy, reason) {
@@ -90,8 +89,8 @@ async function closeTicket(channel, closedBy, reason) {
     if (logsUrl) {
       components.push(
         new ActionRowBuilder().addComponents(
-          new ButtonBuilder().setLabel("Transcript").setURL(logsUrl.short).setStyle(ButtonStyle.Link),
-        ),
+          new ButtonBuilder().setLabel("Transcript").setURL(logsUrl.short).setStyle(ButtonStyle.Link)
+        )
       );
     }
 
@@ -111,7 +110,7 @@ async function closeTicket(channel, closedBy, reason) {
         name: "Closed By",
         value: closedBy ? closedBy.username : "Unknown",
         inline: true,
-      },
+      }
     );
 
     embed.setFields(fields);
@@ -127,8 +126,7 @@ async function closeTicket(channel, closedBy, reason) {
       const dmEmbed = embed
         .setDescription(`**Server:** ${channel.guild.name}\n**Category:** ${ticketDetails.catName}`)
         .setThumbnail(channel.guild.iconURL());
-      ticketDetails.user.send({ embeds: [dmEmbed], components }).catch((ex) => {
-      });
+      ticketDetails.user.send({ embeds: [dmEmbed], components }).catch((ex) => {});
     }
 
     return "SUCCESS";
@@ -139,8 +137,8 @@ async function closeTicket(channel, closedBy, reason) {
 }
 
 /**
- * @param {import("discord.js").Guild} guild
- * @param {import("discord.js").User} author
+ * @param {import('discord.js').Guild} guild
+ * @param {import('discord.js').User} author
  */
 async function closeAllTickets(guild, author) {
   const channels = getTicketChannels(guild);
@@ -165,7 +163,7 @@ async function handleTicketOpen(interaction) {
 
   if (!guild.members.me.permissions.has(OPEN_PERMS))
     return interaction.followUp(
-      "Cannot create ticket channel, missing `Manage Channel` permission. Contact server manager for help!",
+      "Cannot create ticket channel, missing `Manage Channel` permission. Contact server manager for help!"
     );
 
   const alreadyExists = getExistingTicketChannel(guild, user.id);
@@ -188,7 +186,7 @@ async function handleTicketOpen(interaction) {
       new StringSelectMenuBuilder()
         .setCustomId("ticket-menu")
         .setPlaceholder("Choose the ticket category")
-        .addOptions(options),
+        .addOptions(options)
     );
 
     await interaction.followUp({ content: "Please choose a ticket category", components: [menuRow] });
@@ -248,7 +246,7 @@ async function handleTicketOpen(interaction) {
         `Hello ${user.toString()}
         Support will be with you shortly
         ${catName ? `\n**Category:** ${catName}` : ""}
-        `,
+        `
       )
       .setFooter({ text: "You may close your ticket anytime by clicking the button below" });
 
@@ -257,7 +255,7 @@ async function handleTicketOpen(interaction) {
         .setLabel("Close Ticket")
         .setCustomId("TICKET_CLOSE")
         .setEmoji("🔒")
-        .setStyle(ButtonStyle.Primary),
+        .setStyle(ButtonStyle.Primary)
     );
 
     const sent = await tktChannel.send({ content: user.toString(), embeds: [embed], components: [buttonsRow] });
@@ -269,15 +267,14 @@ async function handleTicketOpen(interaction) {
       .setDescription(
         `**Server:** ${guild.name}
         ${catName ? `**Category:** ${catName}` : ""}
-        `,
+        `
       );
 
     const row = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setLabel("View Channel").setURL(sent.url).setStyle(ButtonStyle.Link),
+      new ButtonBuilder().setLabel("View Channel").setURL(sent.url).setStyle(ButtonStyle.Link)
     );
 
-    user.send({ embeds: [dmEmbed], components: [row] }).catch((ex) => {
-    });
+    user.send({ embeds: [dmEmbed], components: [row] }).catch((ex) => {});
 
     await interaction.editReply(`Ticket created! 🔥`);
   } catch (ex) {

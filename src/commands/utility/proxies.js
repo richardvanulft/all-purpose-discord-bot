@@ -54,7 +54,7 @@ module.exports = {
 
 async function getProxies(type) {
   const response = await getBuffer(
-    `https://api.proxyscrape.com/?request=displayproxies&proxytype=${type}&timeout=10000&country=all&anonymity=all&ssl=all`,
+    `https://api.proxyscrape.com/?request=displayproxies&proxytype=${type}&timeout=10000&country=all&anonymity=all&ssl=all`
   );
 
   if (!response.success || !response.buffer) return "Failed to fetch proxies";

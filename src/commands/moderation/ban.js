@@ -52,8 +52,8 @@ module.exports = {
 };
 
 /**
- * @param {import("discord.js").GuildMember} issuer
- * @param {import("discord.js").User} target
+ * @param {import('discord.js').GuildMember} issuer
+ * @param {import('discord.js').User} target
  * @param {string} reason
  */
 async function ban(issuer, target, reason) {

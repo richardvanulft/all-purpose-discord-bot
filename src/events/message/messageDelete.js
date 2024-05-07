@@ -2,8 +2,8 @@ const { EmbedBuilder } = require("discord.js");
 const { getSettings } = require("@schemas/Guild");
 
 /**
- * @param {import("@src/structures").BotClient} client
- * @param {import("discord.js").Message|import("discord.js").PartialMessage} message
+ * @param {import('@src/structures').BotClient} client
+ * @param {import('discord.js').Message|import('discord.js').PartialMessage} message
  */
 module.exports = async (client, message) => {
   if (message.partial) return;
@@ -22,8 +22,8 @@ module.exports = async (client, message) => {
       .setAuthor({ name: "Ghost ping detected" })
       .setDescription(
         `**Message:**\n${message.content}\n\n` +
-        `**Author:** ${message.author.tag} \`${message.author.id}\`\n` +
-        `**Channel:** ${message.channel.toString()}`,
+          `**Author:** ${message.author.tag} \`${message.author.id}\`\n` +
+          `**Channel:** ${message.channel.toString()}`
       )
       .addFields(
         {
@@ -40,7 +40,7 @@ module.exports = async (client, message) => {
           name: "Everyone?",
           value: everyone ? "Yes" : "No",
           inline: true,
-        },
+        }
       )
       .setFooter({ text: `Sent at: ${message.createdAt}` });
 

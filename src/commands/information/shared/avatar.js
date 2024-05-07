@@ -2,7 +2,7 @@ const { EmbedBuilder } = require("discord.js");
 const { EMBED_COLORS } = require("@root/config");
 
 /**
- * @param {import("discord.js").User} user
+ * @param {import('discord.js').User} user
  */
 module.exports = (user) => {
   const x64 = user.displayAvatarURL({ extension: "png", size: 64 });
@@ -18,11 +18,11 @@ module.exports = (user) => {
     .setImage(x256)
     .setDescription(
       `Links: • [x64](${x64}) ` +
-      `• [x128](${x128}) ` +
-      `• [x256](${x256}) ` +
-      `• [x512](${x512}) ` +
-      `• [x1024](${x1024}) ` +
-      `• [x2048](${x2048}) `,
+        `• [x128](${x128}) ` +
+        `• [x256](${x256}) ` +
+        `• [x512](${x512}) ` +
+        `• [x1024](${x1024}) ` +
+        `• [x2048](${x2048}) `
     );
 
   return {

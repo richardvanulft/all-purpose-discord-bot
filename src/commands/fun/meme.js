@@ -38,7 +38,7 @@ module.exports = {
     const choice = args[0];
 
     const buttonRow = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setCustomId("regenMemeBtn").setStyle(ButtonStyle.Secondary).setEmoji("🔁"),
+      new ButtonBuilder().setCustomId("regenMemeBtn").setStyle(ButtonStyle.Secondary).setEmoji("🔁")
     );
     const embed = await getRandomEmbed(choice);
 
@@ -77,7 +77,7 @@ module.exports = {
     const choice = interaction.options.getString("category");
 
     const buttonRow = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setCustomId("regenMemeBtn").setStyle(ButtonStyle.Secondary).setEmoji("🔁"),
+      new ButtonBuilder().setCustomId("regenMemeBtn").setStyle(ButtonStyle.Secondary).setEmoji("🔁")
     );
     const embed = await getRandomEmbed(choice);
 

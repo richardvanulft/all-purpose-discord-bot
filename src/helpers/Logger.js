@@ -32,7 +32,7 @@ const pinoLogger = pino.default(
         mkdir: true,
       }),
     },
-  ]),
+  ])
 );
 
 function sendWebhook(content, err) {
@@ -43,12 +43,11 @@ function sendWebhook(content, err) {
 
   if (errString)
     embed.setDescription(
-      "```js\n" + (errString.length > 4096 ? `${errString.substr(0, 4000)}...` : errString) + "\n```",
+      "```js\n" + (errString.length > 4096 ? `${errString.substr(0, 4000)}...` : errString) + "\n```"
     );
 
   embed.addFields({ name: "Description", value: content || err?.message || "NA" });
-  webhookLogger.send({ username: "Logs", embeds: [embed] }).catch((ex) => {
-  });
+  webhookLogger.send({ username: "Logs", embeds: [embed] }).catch((ex) => {});
 }
 
 module.exports = class Logger {

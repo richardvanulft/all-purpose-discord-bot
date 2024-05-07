@@ -21,7 +21,7 @@ module.exports = {
     if (!guild) {
       return message.safeReply(
         `No server found. Please provide a valid server id.
-        You may use ${data.prefix}findserver/${data.prefix}listservers to find the server id`,
+        You may use ${data.prefix}findserver/${data.prefix}listservers to find the server id`
       );
     }
 

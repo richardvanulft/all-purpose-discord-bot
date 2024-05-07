@@ -9,7 +9,7 @@ const TRANSLATE_COOLDOWN = 120;
 const cooldownCache = new Map();
 
 /**
- * @param {import("discord.js").User} user
+ * @param {import('discord.js').User} user
  */
 const getTranslationCooldown = (user) => {
   if (cooldownCache.has(user.id)) {
@@ -66,7 +66,7 @@ async function handleFlagReaction(emoji, message, user) {
       url: message.url,
       label: "Original Message",
       style: ButtonStyle.Link,
-    }),
+    })
   );
 
   const embed = new EmbedBuilder()
@@ -79,7 +79,7 @@ async function handleFlagReaction(emoji, message, user) {
     });
 
   message.channel.safeSend({ embeds: [embed], components: [btnRow] }).then(
-    () => cooldownCache.set(user.id, Date.now()), // set cooldown
+    () => cooldownCache.set(user.id, Date.now()) // set cooldown
   );
 
   logTranslation(message, emoji);

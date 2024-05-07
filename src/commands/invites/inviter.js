@@ -59,7 +59,7 @@ async function getInviter({ guild }, user, settings) {
       Inviter ID: \`${inviteData.inviter}\`
       Invite Code: \`${inviteData.code}\`
       Inviter Invites: \`${getEffectiveInvites(inviterData)}\`
-      `,
+      `
     );
 
   return { embeds: [embed] };

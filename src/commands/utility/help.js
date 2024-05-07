@@ -102,14 +102,14 @@ async function getHelpMenu({ client, guild }) {
     new StringSelectMenuBuilder()
       .setCustomId("help-menu")
       .setPlaceholder("Kies categorie")
-      .addOptions(options),
+      .addOptions(options)
   );
 
   // Buttons Row
   let components = [];
   components.push(
     new ButtonBuilder().setCustomId("previousBtn").setEmoji("⬅️").setStyle(ButtonStyle.Secondary).setDisabled(true),
-    new ButtonBuilder().setCustomId("nextBtn").setEmoji("➡️").setStyle(ButtonStyle.Secondary).setDisabled(true),
+    new ButtonBuilder().setCustomId("nextBtn").setEmoji("➡️").setStyle(ButtonStyle.Secondary).setDisabled(true)
   );
 
   let buttonsRow = new ActionRowBuilder().addComponents(components);
@@ -119,8 +119,8 @@ async function getHelpMenu({ client, guild }) {
     .setThumbnail(client.user.displayAvatarURL())
     .setDescription(
       "**About Me:**\n" +
-      `Hallo, Ik ben ${guild.members.me.displayName}!\n` +
-      "Kies hieronder een categorie",
+        `Hallo, Ik ben ${guild.members.me.displayName}!\n` +
+      "Kies hieronder een categorie"
     );
 
   return {
@@ -160,7 +160,7 @@ const waiter = (msg, userId, prefix) => {
         // Buttons Row
         let components = [];
         buttonsRow.components.forEach((button) =>
-          components.push(ButtonBuilder.from(button).setDisabled(arrEmbeds.length > 1 ? false : true)),
+          components.push(ButtonBuilder.from(button).setDisabled(arrEmbeds.length > 1 ? false : true))
         );
 
         buttonsRow = new ActionRowBuilder().addComponents(components);
@@ -286,7 +286,7 @@ function getMsgCategoryEmbeds(client, category, prefix) {
       .forEach((cmd) =>
         cmd.command.aliases.forEach((alias) => {
           collector += `\`${alias}\`, `;
-        }),
+        })
       );
 
     collector +=

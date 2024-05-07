@@ -50,7 +50,7 @@ module.exports = {
       embed
         .setColor(EMBED_COLORS.WARNING)
         .setDescription(
-          "Invalid translation code. Visit [here](https://cloud.google.com/translate/docs/languages) to see list of supported translation codes",
+          "Invalid translation code. Visit [here](https://cloud.google.com/translate/docs/languages) to see list of supported translation codes"
         );
       return message.safeReply({ embeds: [embed] });
     }

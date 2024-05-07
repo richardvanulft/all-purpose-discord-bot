@@ -70,7 +70,7 @@ module.exports = {
 };
 
 /**
- * @param {import("discord.js").Guild} guild
+ * @param {import('discord.js').Guild} guild
  * @param {string} type
  * @param {string} name
  * @param {object} settings

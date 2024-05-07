@@ -8,7 +8,7 @@ const xpToAdd = () => getRandomInt(19) + 1;
 
 /**
  * @param {string} content
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildMember} member
  * @param {number} level
  */
 const parse = (content, member, level) => {
@@ -34,6 +34,8 @@ module.exports = {
     const statsDb = await getMemberStats(message.guildId, message.member.id);
     if (isCommand) statsDb.commands.prefix++;
     statsDb.messages++;
+
+    // TODO: Ignore possible bot commands
 
     // Cooldown check to prevent Message Spamming
     const key = `${message.guildId}|${message.member.id}`;
@@ -71,7 +73,7 @@ module.exports = {
   },
 
   /**
-   * @param {import("discord.js").Interaction} interaction
+   * @param {import('discord.js').Interaction} interaction
    */
   async trackInteractionStats(interaction) {
     if (!interaction.guild) return;
@@ -83,8 +85,8 @@ module.exports = {
   },
 
   /**
-   * @param {import("discord.js").VoiceState} oldState
-   * @param {import("discord.js").VoiceState} newState
+   * @param {import('discord.js').VoiceState} oldState
+   * @param {import('discord.js').VoiceState} newState
    */
   async trackVoiceStats(oldState, newState) {
     const oldChannel = oldState.channel;
@@ -94,8 +96,7 @@ module.exports = {
     if (!oldChannel && !newChannel) return;
     if (!newState.member) return;
 
-    const member = await newState.member.fetch().catch(() => {
-    });
+    const member = await newState.member.fetch().catch(() => {});
     if (!member || member.user.bot) return;
 
     // Member joined a voice channel

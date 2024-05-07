@@ -64,7 +64,7 @@ function nowPlaying({ client, guildId }) {
           "] " +
           end,
         inline: false,
-      },
+      }
     );
 
   return { embeds: [embed] };

@@ -1,5 +1,5 @@
 /**
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildMember} member
  * @param {string} messageId
  */
 module.exports = async (member, messageId) => {
@@ -12,7 +12,7 @@ module.exports = async (member, messageId) => {
 
   // Search with messageId
   const giveaway = member.client.giveawaysManager.giveaways.find(
-    (g) => g.messageId === messageId && g.guildId === member.guild.id,
+    (g) => g.messageId === messageId && g.guildId === member.guild.id
   );
 
   // If no giveaway was found

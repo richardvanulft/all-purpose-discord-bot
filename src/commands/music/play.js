@@ -105,7 +105,7 @@ async function play({ member, guild, channel }, query) {
       if (!tracks) guild.client.logger.debug({ query, item });
     } else {
       const res = await guild.client.musicManager.rest.loadTracks(
-        /^https?:\/\//.test(query) ? query : `${search_prefix[MUSIC.DEFAULT_SOURCE]}:${query}`,
+        /^https?:\/\//.test(query) ? query : `${search_prefix[MUSIC.DEFAULT_SOURCE]}:${query}`
       );
       switch (res.loadType) {
         case "LOAD_FAILED":
@@ -183,11 +183,11 @@ async function play({ member, guild, channel }, query) {
             "`" +
             prettyMs(
               tracks.map((t) => t.info.length).reduce((a, b) => a + b, 0),
-              { colonNotation: true },
+              { colonNotation: true }
             ) +
             "`",
           inline: true,
-        },
+        }
       )
       .setFooter({ text: `Requested By: ${member.user.username}` });
   }

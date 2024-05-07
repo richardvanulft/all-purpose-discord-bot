@@ -65,7 +65,7 @@ async function getInvites({ guild }, user, settings) {
         name: "Left Invites",
         value: `**${inviteData?.left || 0}**`,
         inline: true,
-      },
+      }
     );
 
   return { embeds: [embed] };

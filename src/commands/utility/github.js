@@ -87,7 +87,7 @@ async function getGithubUser(target, author) {
         name: "Social Stats",
         value: `**Followers**: *${followers}*\n**Following**: *${following}*`,
         inline: true,
-      },
+      }
     )
     .setDescription(`**Bio**:\n${bio || "Not Provided"}`)
     .setImage(avatarUrl)

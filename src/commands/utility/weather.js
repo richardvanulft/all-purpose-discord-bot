@@ -69,7 +69,7 @@ async function weather(place) {
       { name: "Precipitation", value: `${json.current?.precip.toString()} mm`, inline: true },
       { name: "Humidity", value: json.current?.humidity.toString() || "NA", inline: true },
       { name: "Visual Distance", value: `${json.current?.visibility} km`, inline: true },
-      { name: "UV Index", value: json.current?.uv_index.toString() || "NA", inline: true },
+      { name: "UV Index", value: json.current?.uv_index.toString() || "NA", inline: true }
     )
     .setFooter({ text: `Last checked at ${json.current?.observation_time} GMT` });
 

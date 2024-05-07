@@ -18,7 +18,7 @@ module.exports = (client) => {
 
   if (DASHBOARD.enabled) {
     components.push(
-      new ButtonBuilder().setLabel("Dashboard Link").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link),
+      new ButtonBuilder().setLabel("Dashboard Link").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link)
     );
   }
 

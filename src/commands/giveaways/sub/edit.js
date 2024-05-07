@@ -1,5 +1,5 @@
 /**
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildMember} member
  * @param {string} messageId
  * @param {number} addDuration
  * @param {string} newPrize
@@ -15,7 +15,7 @@ module.exports = async (member, messageId, addDuration, newPrize, newWinnerCount
 
   // Search with messageId
   const giveaway = member.client.giveawaysManager.giveaways.find(
-    (g) => g.messageId === messageId && g.guildId === member.guild.id,
+    (g) => g.messageId === messageId && g.guildId === member.guild.id
   );
 
   // If no giveaway was found

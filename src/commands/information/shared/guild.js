@@ -3,7 +3,7 @@ const { EMBED_COLORS } = require("@root/config");
 const moment = require("moment");
 
 /**
- * @param {import("discord.js").Guild} guild
+ * @param {import('discord.js').Guild} guild
  */
 module.exports = async (guild) => {
   const { name, id, preferredLocale, channels, roles, ownerId } = guild;
@@ -15,10 +15,10 @@ module.exports = async (guild) => {
   const categories = channels.cache.filter((c) => c.type === ChannelType.GuildCategory).size;
   const textChannels = channels.cache.filter((c) => c.type === ChannelType.GuildText).size;
   const voiceChannels = channels.cache.filter(
-    (c) => c.type === ChannelType.GuildVoice || c.type === ChannelType.GuildStageVoice,
+    (c) => c.type === ChannelType.GuildVoice || c.type === ChannelType.GuildStageVoice
   ).size;
   const threadChannels = channels.cache.filter(
-    (c) => c.type === ChannelType.PrivateThread || c.type === ChannelType.PublicThread,
+    (c) => c.type === ChannelType.PrivateThread || c.type === ChannelType.PublicThread
   ).size;
 
   const memberCache = guild.members.cache;
@@ -102,7 +102,7 @@ module.exports = async (guild) => {
         name: `Server Created [${createdAt.fromNow()}]`,
         value: `\`\`\`${createdAt.format("dddd, Do MMMM YYYY")}\`\`\``,
         inline: false,
-      },
+      }
     );
 
   if (guild.splashURL()) embed.setImage(guild.splashURL({ extension: "png", size: 256 }));

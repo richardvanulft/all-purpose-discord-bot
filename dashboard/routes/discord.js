@@ -5,7 +5,7 @@ const fetch = require("node-fetch"),
   btoa = require("btoa");
 
 // Gets login page
-router.get("/login", async function(req, res) {
+router.get("/login", async function (req, res) {
   if (!req.user || !req.user.id || !req.user.guilds) {
     // check if client user is ready
     if (!req.client.user?.id) {
@@ -17,8 +17,8 @@ router.get("/login", async function(req, res) {
       `https://discordapp.com/api/oauth2/authorize?client_id=${
         req.client.user.id
       }&scope=identify%20guilds&response_type=code&redirect_uri=${encodeURIComponent(
-        req.client.config.DASHBOARD.baseURL + "/api/callback",
-      )}&state=${req.query.state || "no"}`,
+        req.client.config.DASHBOARD.baseURL + "/api/callback"
+      )}&state=${req.query.state || "no"}`
     );
   }
   res.redirect("/selector");

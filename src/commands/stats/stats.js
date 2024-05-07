@@ -41,7 +41,7 @@ module.exports = {
 };
 
 /**
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildMember} member
  * @param {object} settings
  */
 async function stats(member, settings) {
@@ -84,7 +84,7 @@ async function stats(member, settings) {
       ❯ Total Connections: ${memberStats.voice.connections}
       ❯ Time Spent: ${Math.floor(memberStats.voice.time / 60)} min
     `,
-      },
+      }
     )
     .setFooter({ text: "Stats Generated" })
     .setTimestamp();

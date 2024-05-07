@@ -266,13 +266,13 @@ module.exports = {
 };
 
 /**
- * @param {import("discord.js").Message} param0
- * @param {import("discord.js").GuildTextBasedChannel} targetChannel
+ * @param {import('discord.js').Message} param0
+ * @param {import('discord.js').GuildTextBasedChannel} targetChannel
  * @param {object} settings
  */
 async function ticketModalSetup({ guild, channel, member }, targetChannel, settings) {
   const buttonRow = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setCustomId("ticket_btnSetup").setLabel("Setup Message").setStyle(ButtonStyle.Primary),
+    new ButtonBuilder().setCustomId("ticket_btnSetup").setLabel("Setup Message").setStyle(ButtonStyle.Primary)
   );
 
   const sentMsg = await channel.safeSend({
@@ -288,8 +288,7 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
       filter: (i) => i.customId === "ticket_btnSetup" && i.member.id === member.id && i.message.id === sentMsg.id,
       time: 20000,
     })
-    .catch((ex) => {
-    });
+    .catch((ex) => {});
 
   if (!btnInteraction) return sentMsg.edit({ content: "No response received, cancelling setup", components: [] });
 
@@ -304,24 +303,24 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
             .setCustomId("title")
             .setLabel("Embed Title")
             .setStyle(TextInputStyle.Short)
-            .setRequired(false),
+            .setRequired(false)
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("description")
             .setLabel("Embed Description")
             .setStyle(TextInputStyle.Paragraph)
-            .setRequired(false),
+            .setRequired(false)
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("footer")
             .setLabel("Embed Footer")
             .setStyle(TextInputStyle.Short)
-            .setRequired(false),
+            .setRequired(false)
         ),
       ],
-    }),
+    })
   );
 
   // receive modal input
@@ -330,8 +329,7 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
       time: 1 * 60 * 1000,
       filter: (m) => m.customId === "ticket-modalSetup" && m.member.id === member.id && m.message.id === sentMsg.id,
     })
-    .catch((ex) => {
-    });
+    .catch((ex) => {});
 
   if (!modal) return sentMsg.edit({ content: "No response received, cancelling setup", components: [] });
 
@@ -348,7 +346,7 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
     .setFooter({ text: footer || "You can only have 1 open ticket at a time!" });
 
   const tktBtnRow = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setLabel("Open a ticket").setCustomId("TICKET_CREATE").setStyle(ButtonStyle.Success),
+    new ButtonBuilder().setLabel("Open a ticket").setCustomId("TICKET_CREATE").setStyle(ButtonStyle.Success)
   );
 
   await targetChannel.send({ embeds: [embed], components: [tktBtnRow] });

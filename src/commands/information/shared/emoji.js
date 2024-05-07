@@ -11,7 +11,7 @@ module.exports = (emoji) => {
     .setColor(EMBED_COLORS.BOT_EMBED)
     .setAuthor({ name: "Emoji Info" })
     .setDescription(
-      `**Id:** ${custom.id}\n` + `**Name:** ${custom.name}\n` + `**Animated:** ${custom.animated ? "Yes" : "No"}`,
+      `**Id:** ${custom.id}\n` + `**Name:** ${custom.name}\n` + `**Animated:** ${custom.animated ? "Yes" : "No"}`
     )
     .setImage(url);
 

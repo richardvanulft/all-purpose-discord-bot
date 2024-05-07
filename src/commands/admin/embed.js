@@ -62,15 +62,15 @@ module.exports = {
 };
 
 /**
- * @param {import("discord.js").GuildTextBasedChannel} channel
- * @param {import("discord.js").GuildMember} member
+ * @param {import('discord.js').GuildTextBasedChannel} channel
+ * @param {import('discord.js').GuildMember} member
  */
 async function embedSetup(channel, member) {
   const sentMsg = await channel.send({
     content: "Click the button below to get started",
     components: [
       new ActionRowBuilder().addComponents(
-        new ButtonBuilder().setCustomId("EMBED_ADD").setLabel("Create Embed").setStyle(ButtonStyle.Primary),
+        new ButtonBuilder().setCustomId("EMBED_ADD").setLabel("Create Embed").setStyle(ButtonStyle.Primary)
       ),
     ],
   });
@@ -81,8 +81,7 @@ async function embedSetup(channel, member) {
       filter: (i) => i.customId === "EMBED_ADD" && i.member.id === member.id && i.message.id === sentMsg.id,
       time: 20000,
     })
-    .catch((ex) => {
-    });
+    .catch((ex) => {});
 
   if (!btnInteraction) return sentMsg.edit({ content: "No response received", components: [] });
 
@@ -96,38 +95,38 @@ async function embedSetup(channel, member) {
             .setCustomId("title")
             .setLabel("Embed Title")
             .setStyle(TextInputStyle.Short)
-            .setRequired(false),
+            .setRequired(false)
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("author")
             .setLabel("Embed Author")
             .setStyle(TextInputStyle.Short)
-            .setRequired(false),
+            .setRequired(false)
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("description")
             .setLabel("Embed Description")
             .setStyle(TextInputStyle.Paragraph)
-            .setRequired(false),
+            .setRequired(false)
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("color")
             .setLabel("Embed Color")
             .setStyle(TextInputStyle.Short)
-            .setRequired(false),
+            .setRequired(false)
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("footer")
             .setLabel("Embed Footer")
             .setStyle(TextInputStyle.Short)
-            .setRequired(false),
+            .setRequired(false)
         ),
       ],
-    }),
+    })
   );
 
   // receive modal input
@@ -136,13 +135,11 @@ async function embedSetup(channel, member) {
       time: 1 * 60 * 1000,
       filter: (m) => m.customId === "EMBED_MODAL" && m.member.id === member.id && m.message.id === sentMsg.id,
     })
-    .catch((ex) => {
-    });
+    .catch((ex) => {});
 
   if (!modal) return sentMsg.edit({ content: "No response received, cancelling setup", components: [] });
 
-  modal.reply({ content: "Embed sent", ephemeral: true }).catch((ex) => {
-  });
+  modal.reply({ content: "Embed sent", ephemeral: true }).catch((ex) => {});
 
   const title = modal.fields.getTextInputValue("title");
   const author = modal.fields.getTextInputValue("author");
@@ -164,7 +161,7 @@ async function embedSetup(channel, member) {
   const buttonRow = new ActionRowBuilder().addComponents(
     new ButtonBuilder().setCustomId("EMBED_FIELD_ADD").setLabel("Add Field").setStyle(ButtonStyle.Success),
     new ButtonBuilder().setCustomId("EMBED_FIELD_REM").setLabel("Remove Field").setStyle(ButtonStyle.Danger),
-    new ButtonBuilder().setCustomId("EMBED_FIELD_DONE").setLabel("Done").setStyle(ButtonStyle.Primary),
+    new ButtonBuilder().setCustomId("EMBED_FIELD_DONE").setLabel("Done").setStyle(ButtonStyle.Primary)
   );
 
   await sentMsg.edit({
@@ -192,14 +189,14 @@ async function embedSetup(channel, member) {
                 .setCustomId("name")
                 .setLabel("Field Name")
                 .setStyle(TextInputStyle.Short)
-                .setRequired(true),
+                .setRequired(true)
             ),
             new ActionRowBuilder().addComponents(
               new TextInputBuilder()
                 .setCustomId("value")
                 .setLabel("Field Value")
                 .setStyle(TextInputStyle.Paragraph)
-                .setRequired(true),
+                .setRequired(true)
             ),
             new ActionRowBuilder().addComponents(
               new TextInputBuilder()
@@ -207,10 +204,10 @@ async function embedSetup(channel, member) {
                 .setLabel("Inline? (true/false)")
                 .setStyle(TextInputStyle.Short)
                 .setValue("true")
-                .setRequired(true),
+                .setRequired(true)
             ),
           ],
-        }),
+        })
       );
 
       // receive modal input
@@ -219,13 +216,11 @@ async function embedSetup(channel, member) {
           time: 5 * 60 * 1000,
           filter: (m) => m.customId === "EMBED_ADD_FIELD_MODAL" && m.member.id === member.id,
         })
-        .catch((ex) => {
-        });
+        .catch((ex) => {});
 
       if (!modal) return sentMsg.edit({ components: [] });
 
-      modal.reply({ content: "Field added", ephemeral: true }).catch((ex) => {
-      });
+      modal.reply({ content: "Field added", ephemeral: true }).catch((ex) => {});
 
       const name = modal.fields.getTextInputValue("name");
       const value = modal.fields.getTextInputValue("value");

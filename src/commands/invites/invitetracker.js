@@ -65,7 +65,7 @@ async function setStatus({ guild }, input, settings) {
 
     if (channelMissing.length > 1) {
       return `I may not be able to track invites properly\nI am missing \`Manage Channel\` permission in the following channels \`\`\`${channelMissing.join(
-        ", ",
+        ", "
       )}\`\`\``;
     }
 
