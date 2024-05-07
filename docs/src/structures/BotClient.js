@@ -13,7 +13,6 @@ const { recursiveReadDirSync } = require("../helpers/Utils");
 const { validateCommand, validateContext } = require("../helpers/Validator");
 const { schemas } = require("@src/database/mongoose");
 const CommandCategory = require("./CommandCategory");
-const lavaclient = require("../handlers/lavaclient");
 const giveawaysHandler = require("../handlers/giveaway");
 const { DiscordTogether } = require("discord-together");
 
@@ -61,9 +60,6 @@ module.exports = class BotClient extends Client {
     this.joinLeaveWebhook = process.env.JOIN_LEAVE_LOGS
       ? new WebhookClient({ url: process.env.JOIN_LEAVE_LOGS })
       : undefined;
-
-    // Music Player
-    if (this.config.MUSIC.ENABLED) this.musicManager = lavaclient(this);
 
     // Giveaways
     if (this.config.GIVEAWAYS.ENABLED) this.giveawaysManager = giveawaysHandler(this);

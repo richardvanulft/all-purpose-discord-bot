@@ -1028,3 +1028,134 @@
 {"level":30,"time":1715090134011,"pid":9297,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
 {"level":30,"time":1715090134011,"pid":9297,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
 {"level":30,"time":1715090134034,"pid":9297,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1715090297351,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1715090297352,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1715090297353,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1715090297353,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1715090297393,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":20,"time":1715090297705,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1715090297706,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1715090297706,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1715090297710,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1715090297711,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1715090297713,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1715090297718,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1715090297719,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1715090297727,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1715090297727,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1715090297728,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1715090297730,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1715090297731,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1715090297739,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1715090297740,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":20,"time":1715090297741,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command move. Disabled!"}
+{"level":20,"time":1715090297742,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1715090297743,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1715090297743,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgebots. Disabled!"}
+{"level":20,"time":1715090297744,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1715090297745,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1715090297745,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeuser. Disabled!"}
+{"level":20,"time":1715090297746,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1715090297747,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1715090297748,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":20,"time":1715090297750,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command purge. Disabled!"}
+{"level":20,"time":1715090297751,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command voice. Disabled!"}
+{"level":20,"time":1715090297755,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command bassboost. Category MUSIC is disabled"}
+{"level":20,"time":1715090297756,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command loop. Category MUSIC is disabled"}
+{"level":20,"time":1715090297757,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command lyric. Category MUSIC is disabled"}
+{"level":20,"time":1715090297758,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command np. Category MUSIC is disabled"}
+{"level":20,"time":1715090297759,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command pause. Category MUSIC is disabled"}
+{"level":20,"time":1715090297760,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command play. Category MUSIC is disabled"}
+{"level":20,"time":1715090297760,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command queue. Category MUSIC is disabled"}
+{"level":20,"time":1715090297761,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command resume. Category MUSIC is disabled"}
+{"level":20,"time":1715090297761,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command search. Category MUSIC is disabled"}
+{"level":20,"time":1715090297762,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command seek. Category MUSIC is disabled"}
+{"level":20,"time":1715090297763,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command shuffle. Category MUSIC is disabled"}
+{"level":20,"time":1715090297763,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command skip. Category MUSIC is disabled"}
+{"level":20,"time":1715090297764,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command stop. Category MUSIC is disabled"}
+{"level":20,"time":1715090297764,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command volume. Category MUSIC is disabled"}
+{"level":20,"time":1715090297765,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1715090297766,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1715090297766,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1715090297781,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 80 commands"}
+{"level":30,"time":1715090297781,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 61 slash commands"}
+{"level":30,"time":1715090297781,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1715090297782,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1715090297782,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1715090297782,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1715090297814,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1715090298079,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date"}
+{"level":30,"time":1715090298079,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1715090298190,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1715090298535,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1715090298556,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1715090299106,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1715090299106,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1715090299130,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":50,"time":1715090539621,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required","stack":"DiscordAPIError[50035]: Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async TextChannel.send (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/structures/interfaces/TextBasedChannel.js:162:15)\n    at async GuildChannel.safeSend (/Users/stagiairgaaf/Documents/Development/discord-bot/src/helpers/extenders/GuildChannel.js:24:26)","requestBody":{"files":[],"json":{"content":"Welkom in de server zandkindje!","tts":false,"embeds":[{}],"allowed_mentions":{"replied_user":false}}},"rawError":{"message":"Invalid Form Body","code":50035,"errors":{"embeds":{"0":{"description":{"_errors":[{"code":"BASE_TYPE_REQUIRED","message":"This field is required"}]}}}}},"code":50035,"status":400,"method":"POST","url":"https://discord.com/api/v10/channels/1236968900982472836/messages"},"msg":"safeSend: Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required"}
+{"level":50,"time":1715090877365,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required","stack":"DiscordAPIError[50035]: Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async TextChannel.send (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/structures/interfaces/TextBasedChannel.js:162:15)\n    at async GuildChannel.safeSend (/Users/stagiairgaaf/Documents/Development/discord-bot/src/helpers/extenders/GuildChannel.js:24:26)","requestBody":{"files":[],"json":{"content":"Welkom in de server zandkindje!","tts":false,"embeds":[{}],"allowed_mentions":{"replied_user":false}}},"rawError":{"message":"Invalid Form Body","code":50035,"errors":{"embeds":{"0":{"description":{"_errors":[{"code":"BASE_TYPE_REQUIRED","message":"This field is required"}]}}}}},"code":50035,"status":400,"method":"POST","url":"https://discord.com/api/v10/channels/1236968900982472836/messages"},"msg":"safeSend: Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required"}
+{"level":50,"time":1715090966072,"pid":10132,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required","stack":"DiscordAPIError[50035]: Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async TextChannel.send (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/structures/interfaces/TextBasedChannel.js:162:15)\n    at async GuildChannel.safeSend (/Users/stagiairgaaf/Documents/Development/discord-bot/src/helpers/extenders/GuildChannel.js:24:26)","requestBody":{"files":[],"json":{"content":"Welkom in de server zandkindje!","tts":false,"embeds":[{}],"allowed_mentions":{"replied_user":false}}},"rawError":{"message":"Invalid Form Body","code":50035,"errors":{"embeds":{"0":{"description":{"_errors":[{"code":"BASE_TYPE_REQUIRED","message":"This field is required"}]}}}}},"code":50035,"status":400,"method":"POST","url":"https://discord.com/api/v10/channels/1236968900982472836/messages"},"msg":"safeSend: Invalid Form Body\nembeds[0].description[BASE_TYPE_REQUIRED]: This field is required"}
+{"level":30,"time":1715092522024,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1715092522025,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1715092522025,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1715092522025,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1715092522072,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":20,"time":1715092522434,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1715092522435,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1715092522436,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1715092522441,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1715092522442,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1715092522444,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1715092522446,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1715092522447,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1715092522455,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1715092522456,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1715092522457,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1715092522459,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1715092522461,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1715092522472,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1715092522473,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":20,"time":1715092522475,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command move. Disabled!"}
+{"level":20,"time":1715092522475,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1715092522476,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1715092522477,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgebots. Disabled!"}
+{"level":20,"time":1715092522477,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1715092522478,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1715092522478,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeuser. Disabled!"}
+{"level":20,"time":1715092522479,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1715092522488,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1715092522491,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":20,"time":1715092522492,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command purge. Disabled!"}
+{"level":20,"time":1715092522493,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command voice. Disabled!"}
+{"level":20,"time":1715092522497,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command bassboost. Category MUSIC is disabled"}
+{"level":20,"time":1715092522521,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command loop. Category MUSIC is disabled"}
+{"level":20,"time":1715092522522,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command lyric. Category MUSIC is disabled"}
+{"level":20,"time":1715092522525,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command np. Category MUSIC is disabled"}
+{"level":20,"time":1715092522526,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command pause. Category MUSIC is disabled"}
+{"level":20,"time":1715092522537,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command play. Category MUSIC is disabled"}
+{"level":20,"time":1715092522537,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command queue. Category MUSIC is disabled"}
+{"level":20,"time":1715092522538,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command resume. Category MUSIC is disabled"}
+{"level":20,"time":1715092522539,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command search. Category MUSIC is disabled"}
+{"level":20,"time":1715092522539,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command seek. Category MUSIC is disabled"}
+{"level":20,"time":1715092522540,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command shuffle. Category MUSIC is disabled"}
+{"level":20,"time":1715092522540,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command skip. Category MUSIC is disabled"}
+{"level":20,"time":1715092522541,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command stop. Category MUSIC is disabled"}
+{"level":20,"time":1715092522542,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command volume. Category MUSIC is disabled"}
+{"level":20,"time":1715092522542,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1715092522543,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1715092522544,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1715092522558,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 80 commands"}
+{"level":30,"time":1715092522558,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 61 slash commands"}
+{"level":30,"time":1715092522558,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1715092522559,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1715092522559,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1715092522559,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1715092522589,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1715092522891,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date"}
+{"level":30,"time":1715092522891,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1715092523016,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1715092523427,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1715092523447,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1715092524231,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1715092524232,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1715092524259,"pid":20435,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
