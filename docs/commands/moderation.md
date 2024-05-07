@@ -5,7 +5,7 @@ description: 23 commands
 # 🔨 Moderation
 
 | Command                             | Slash                  | Description                                              |
-|-------------------------------------|------------------------|----------------------------------------------------------|
+| ----------------------------------- | ---------------------- | -------------------------------------------------------- |
 | **!warnings list \[member]**        | **/warnings list**     | list all warnings for a user                             |
 | **!warnings clear \<member>**       | **/warnings clear**    | clear all warnings for a user                            |
 | **!warn \<member> \[reason]**       | **/warn**              | warns the specified member                               |

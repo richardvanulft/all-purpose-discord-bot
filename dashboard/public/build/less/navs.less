@@ -18,20 +18,17 @@
     .border-radius(0);
     border-top: 3px solid transparent;
     color: #444;
-
     > .fa,
     > .glyphicon,
     > .ion {
       margin-right: 5px;
     }
   }
-
   > li.active > a,
   > li.active > a:hover,
   > li.active > a:focus {
     border-top-color: @light-blue;
   }
-
   > li.active > a {
     font-weight: 600;
   }
@@ -45,7 +42,6 @@
     border-left: 3px solid transparent;
     color: #444;
   }
-
   > li.active > a,
   > li.active > a:hover {
     background: transparent;
@@ -69,13 +65,11 @@
   background: #fff;
   box-shadow: @box-boxshadow;
   border-radius: @box-border-radius;
-
   > .nav-tabs {
     margin: 0;
     border-bottom-color: #f4f4f4;
 
     .border-top-radius(@box-border-radius);
-
     > li {
       border-top: 3px solid transparent;
       margin-bottom: -2px;
@@ -87,22 +81,18 @@
       > a {
         color: #444;
         .border-radius(0);
-
         &.text-muted {
           color: #999;
         }
-
         &,
         &:hover {
           background: transparent;
           margin: 0;
         }
-
         &:hover {
           color: #999;
         }
       }
-
       &:not(.active) {
         > a:hover,
         > a:focus,
@@ -110,19 +100,16 @@
           border-color: transparent;
         }
       }
-
       margin-right: 5px;
     }
 
     > li.active {
       border-top-color: @light-blue;
-
       & > a,
       &:hover > a {
         background-color: #fff;
         color: #444;
       }
-
       > a {
         border-top-color: transparent;
         border-left-color: #f4f4f4;
@@ -133,7 +120,6 @@
 
     > li:first-of-type {
       margin-left: 0;
-
       &.active {
         > a {
           border-left-color: transparent;
@@ -144,18 +130,14 @@
     //Pulled to the right
     &.pull-right {
       float: none !important;
-
       > li {
         float: right;
       }
-
       > li:first-of-type {
         margin-right: 0;
-
         > a {
           border-left-width: 1px;
         }
-
         &.active {
           > a {
             border-left-color: #f4f4f4;
@@ -170,7 +152,6 @@
       padding: 0 10px;
       font-size: 20px;
       color: #444;
-
       > .fa,
       > .glyphicon,
       > .ion {
@@ -192,7 +173,6 @@
       color: #999;
     }
   }
-
   // Tab color variations
   &.tab-primary {
     > .nav-tabs {
@@ -201,7 +181,6 @@
       }
     }
   }
-
   &.tab-info {
     > .nav-tabs {
       > li.active {
@@ -209,7 +188,6 @@
       }
     }
   }
-
   &.tab-danger {
     > .nav-tabs {
       > li.active {
@@ -217,7 +195,6 @@
       }
     }
   }
-
   &.tab-warning {
     > .nav-tabs {
       > li.active {
@@ -225,7 +202,6 @@
       }
     }
   }
-
   &.tab-success {
     > .nav-tabs {
       > li.active {
@@ -233,7 +209,6 @@
       }
     }
   }
-
   &.tab-default {
     > .nav-tabs {
       > li.active {
@@ -249,7 +224,6 @@
     background: #fafafa;
     color: #666;
   }
-
   &.pagination-flat {
     > li > a {
       .border-radius(0) !important;

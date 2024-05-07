@@ -5,7 +5,7 @@ description: 13 commands
 # 🎵 Music
 
 | Command                 | Slash          | Description                                                 |
-|-------------------------|----------------|-------------------------------------------------------------|
+| ----------------------- | -------------- | ----------------------------------------------------------- |
 | **!bassboost \<level>** | **/bassboost** | set bassboost level                                         |
 | **!loop**               | **/loop**      | loops the song or queue                                     |
 | **!np**                 | **/np**        | show's what track is currently being played                 |

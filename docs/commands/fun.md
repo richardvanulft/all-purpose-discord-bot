@@ -5,7 +5,7 @@ description: 7 commands
 # 😂 Fun
 
 | Command                | Slash          | Description                 |
-|------------------------|----------------|-----------------------------|
+| ---------------------- | -------------- | --------------------------- |
 | **!animal \<type>**    | **/animal**    | shows a random animal image |
 | **!facts \<animal>**   | **/facts**     | get a random animal facts   |
 | **!flip coin**         | **/flip coin** | flip a coin                 |

@@ -1,32 +1,9 @@
 (function() {
-  var AjaxMonitor, Bar, DocumentMonitor, ElementMonitor, ElementTracker, EventLagMonitor, Evented, Events,
-    NoTargetError, Pace, RequestIntercept, SOURCE_KEYS, Scaler, SocketRequestTracker, XHRRequestTracker, animation,
-    avgAmplitude, bar, cancelAnimation, cancelAnimationFrame, defaultOptions, extend, extendNative, getFromDOM,
-    getIntercept, handlePushState, ignoreStack, init, now, options, requestAnimationFrame, result, runAnimation,
-    scalers, shouldIgnoreURL, shouldTrack, source, sources, uniScaler, _WebSocket, _XDomainRequest, _XMLHttpRequest, _i,
-    _intercept, _len, _pushState, _ref, _ref1, _replaceState,
+  var AjaxMonitor, Bar, DocumentMonitor, ElementMonitor, ElementTracker, EventLagMonitor, Evented, Events, NoTargetError, Pace, RequestIntercept, SOURCE_KEYS, Scaler, SocketRequestTracker, XHRRequestTracker, animation, avgAmplitude, bar, cancelAnimation, cancelAnimationFrame, defaultOptions, extend, extendNative, getFromDOM, getIntercept, handlePushState, ignoreStack, init, now, options, requestAnimationFrame, result, runAnimation, scalers, shouldIgnoreURL, shouldTrack, source, sources, uniScaler, _WebSocket, _XDomainRequest, _XMLHttpRequest, _i, _intercept, _len, _pushState, _ref, _ref1, _replaceState,
     __slice = [].slice,
     __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) {
-      for (var key in parent) {
-        if (__hasProp.call(parent, key)) child[key] = parent[key];
-      }
-
-      function ctor() {
-        this.constructor = child;
-      }
-
-      ctor.prototype = parent.prototype;
-      child.prototype = new ctor();
-      child.__super__ = parent.prototype;
-      return child;
-    },
-    __indexOf = [].indexOf || function(item) {
-      for (var i = 0, l = this.length; i < l; i++) {
-        if (i in this && this[i] === item) return i;
-      }
-      return -1;
-    };
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   defaultOptions = {
     catchupTime: 100,
@@ -38,21 +15,21 @@
     startOnPageLoad: true,
     restartOnPushState: true,
     restartOnRequestAfter: 500,
-    target: "body",
+    target: 'body',
     elements: {
       checkInterval: 100,
-      selectors: ["body"],
+      selectors: ['body']
     },
     eventLag: {
       minSamples: 10,
       sampleCount: 3,
-      lagThreshold: 3,
+      lagThreshold: 3
     },
     ajax: {
-      trackMethods: ["GET"],
+      trackMethods: ['GET'],
       trackWebSockets: true,
-      ignoreURLs: [],
-    },
+      ignoreURLs: []
+    }
   };
 
   now = function() {
@@ -94,7 +71,7 @@
   result = function() {
     var args, key, obj;
     obj = arguments[0], key = arguments[1], args = 3 <= arguments.length ? __slice.call(arguments, 2) : [];
-    if (typeof obj[key] === "function") {
+    if (typeof obj[key] === 'function') {
       return obj[key].apply(obj, args);
     } else {
       return obj[key];
@@ -110,7 +87,7 @@
         for (key in source) {
           if (!__hasProp.call(source, key)) continue;
           val = source[key];
-          if ((out[key] != null) && typeof out[key] === "object" && (val != null) && typeof val === "object") {
+          if ((out[key] != null) && typeof out[key] === 'object' && (val != null) && typeof val === 'object') {
             extend(out[key], val);
           } else {
             out[key] = val;
@@ -135,7 +112,7 @@
   getFromDOM = function(key, json) {
     var data, e, el;
     if (key == null) {
-      key = "options";
+      key = 'options';
     }
     if (json == null) {
       json = true;
@@ -157,8 +134,7 @@
   };
 
   Evented = (function() {
-    function Evented() {
-    }
+    function Evented() {}
 
     Evented.prototype.on = function(event, handler, ctx, once) {
       var _base;
@@ -174,7 +150,7 @@
       return this.bindings[event].push({
         handler: handler,
         ctx: ctx,
-        once: once,
+        once: once
       });
     };
 
@@ -234,7 +210,7 @@
 
   options = Pace.options = extend({}, defaultOptions, window.paceOptions, getFromDOM());
 
-  _ref = ["ajax", "document", "eventLag", "elements"];
+  _ref = ['ajax', 'document', 'eventLag', 'elements'];
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
     source = _ref[_i];
     if (options[source] === true) {
@@ -266,11 +242,11 @@
         if (!targetElement) {
           throw new NoTargetError;
         }
-        this.el = document.createElement("div");
+        this.el = document.createElement('div');
         this.el.className = "pace pace-active";
-        document.body.className = document.body.className.replace(/pace-done/g, "");
-        document.body.className += " pace-running";
-        this.el.innerHTML = "<div class=\"pace-progress\">\n  <div class=\"pace-progress-inner\"></div>\n</div>\n<div class=\"pace-activity\"></div>";
+        document.body.className = document.body.className.replace(/pace-done/g, '');
+        document.body.className += ' pace-running';
+        this.el.innerHTML = '<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>';
         if (targetElement.firstChild != null) {
           targetElement.insertBefore(this.el, targetElement.firstChild);
         } else {
@@ -283,10 +259,10 @@
     Bar.prototype.finish = function() {
       var el;
       el = this.getElement();
-      el.className = el.className.replace("pace-active", "");
-      el.className += " pace-inactive";
-      document.body.className = document.body.className.replace("pace-running", "");
-      return document.body.className += " pace-done";
+      el.className = el.className.replace('pace-active', '');
+      el.className += ' pace-inactive';
+      document.body.className = document.body.className.replace('pace-running', '');
+      return document.body.className += ' pace-done';
     };
 
     Bar.prototype.update = function(prog) {
@@ -310,20 +286,20 @@
       }
       el = this.getElement();
       transform = "translate3d(" + this.progress + "%, 0, 0)";
-      _ref2 = ["webkitTransform", "msTransform", "transform"];
+      _ref2 = ['webkitTransform', 'msTransform', 'transform'];
       for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
         key = _ref2[_j];
         el.children[0].style[key] = transform;
       }
       if (!this.lastRenderedProgress || this.lastRenderedProgress | 0 !== this.progress | 0) {
-        el.children[0].setAttribute("data-progress-text", "" + (this.progress | 0) + "%");
+        el.children[0].setAttribute('data-progress-text', "" + (this.progress | 0) + "%");
         if (this.progress >= 100) {
-          progressStr = "99";
+          progressStr = '99';
         } else {
           progressStr = this.progress < 10 ? "0" : "";
           progressStr += this.progress | 0;
         }
-        el.children[0].setAttribute("data-progress", "" + progressStr);
+        el.children[0].setAttribute('data-progress', "" + progressStr);
       }
       return this.lastRenderedProgress = this.progress;
     };
@@ -377,14 +353,14 @@
     _results = [];
     for (key in from.prototype) {
       try {
-        if ((to[key] == null) && typeof from[key] !== "function") {
-          if (typeof Object.defineProperty === "function") {
+        if ((to[key] == null) && typeof from[key] !== 'function') {
+          if (typeof Object.defineProperty === 'function') {
             _results.push(Object.defineProperty(to, key, {
               get: function() {
                 return from.prototype[key];
               },
               configurable: true,
-              enumerable: true,
+              enumerable: true
             }));
           } else {
             _results.push(to[key] = from.prototype[key]);
@@ -404,7 +380,7 @@
   Pace.ignore = function() {
     var args, fn, ret;
     fn = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-    ignoreStack.unshift("ignore");
+    ignoreStack.unshift('ignore');
     ret = fn.apply(null, args);
     ignoreStack.shift();
     return ret;
@@ -413,7 +389,7 @@
   Pace.track = function() {
     var args, fn, ret;
     fn = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-    ignoreStack.unshift("track");
+    ignoreStack.unshift('track');
     ret = fn.apply(null, args);
     ignoreStack.shift();
     return ret;
@@ -422,13 +398,13 @@
   shouldTrack = function(method) {
     var _ref2;
     if (method == null) {
-      method = "GET";
+      method = 'GET';
     }
-    if (ignoreStack[0] === "track") {
-      return "force";
+    if (ignoreStack[0] === 'track') {
+      return 'force';
     }
     if (!ignoreStack.length && options.ajax) {
-      if (method === "socket" && options.ajax.trackWebSockets) {
+      if (method === 'socket' && options.ajax.trackWebSockets) {
         return true;
       } else if (_ref2 = method.toUpperCase(), __indexOf.call(options.ajax.trackMethods, _ref2) >= 0) {
         return true;
@@ -449,10 +425,10 @@
         _open = req.open;
         return req.open = function(type, url, async) {
           if (shouldTrack(type)) {
-            _this.trigger("request", {
+            _this.trigger('request', {
               type: type,
               url: url,
-              request: req,
+              request: req
             });
           }
           return _open.apply(req, arguments);
@@ -466,8 +442,7 @@
       };
       try {
         extendNative(window.XMLHttpRequest, _XMLHttpRequest);
-      } catch (_error) {
-      }
+      } catch (_error) {}
       if (_XDomainRequest != null) {
         window.XDomainRequest = function() {
           var req;
@@ -477,8 +452,7 @@
         };
         try {
           extendNative(window.XDomainRequest, _XDomainRequest);
-        } catch (_error) {
-        }
+        } catch (_error) {}
       }
       if ((_WebSocket != null) && options.ajax.trackWebSockets) {
         window.WebSocket = function(url, protocols) {
@@ -488,20 +462,19 @@
           } else {
             req = new _WebSocket(url);
           }
-          if (shouldTrack("socket")) {
-            _this.trigger("request", {
-              type: "socket",
+          if (shouldTrack('socket')) {
+            _this.trigger('request', {
+              type: 'socket',
               url: url,
               protocols: protocols,
-              request: req,
+              request: req
             });
           }
           return req;
         };
         try {
           extendNative(window.WebSocket, _WebSocket);
-        } catch (_error) {
-        }
+        } catch (_error) {}
       }
     }
 
@@ -523,7 +496,7 @@
     _ref2 = options.ajax.ignoreURLs;
     for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
       pattern = _ref2[_j];
-      if (typeof pattern === "string") {
+      if (typeof pattern === 'string') {
         if (url.indexOf(pattern) !== -1) {
           return true;
         }
@@ -536,21 +509,21 @@
     return false;
   };
 
-  getIntercept().on("request", function(_arg) {
+  getIntercept().on('request', function(_arg) {
     var after, args, request, type, url;
     type = _arg.type, request = _arg.request, url = _arg.url;
     if (shouldIgnoreURL(url)) {
       return;
     }
-    if (!Pace.running && (options.restartOnRequestAfter !== false || shouldTrack(type) === "force")) {
+    if (!Pace.running && (options.restartOnRequestAfter !== false || shouldTrack(type) === 'force')) {
       args = arguments;
       after = options.restartOnRequestAfter || 0;
-      if (typeof after === "boolean") {
+      if (typeof after === 'boolean') {
         after = 0;
       }
       return setTimeout(function() {
         var stillActive, _j, _len1, _ref2, _ref3, _results;
-        if (type === "socket") {
+        if (type === 'socket') {
           stillActive = request.readyState < 2;
         } else {
           stillActive = (0 < (_ref2 = request.readyState) && _ref2 < 4);
@@ -578,7 +551,7 @@
     function AjaxMonitor() {
       var _this = this;
       this.elements = [];
-      getIntercept().on("request", function() {
+      getIntercept().on('request', function() {
         return _this.watch.apply(_this, arguments);
       });
     }
@@ -589,7 +562,7 @@
       if (shouldIgnoreURL(url)) {
         return;
       }
-      if (type === "socket") {
+      if (type === 'socket') {
         tracker = new SocketRequestTracker(request);
       } else {
         tracker = new XHRRequestTracker(request);
@@ -608,14 +581,14 @@
       this.progress = 0;
       if (window.ProgressEvent != null) {
         size = null;
-        request.addEventListener("progress", function(evt) {
+        request.addEventListener('progress', function(evt) {
           if (evt.lengthComputable) {
             return _this.progress = 100 * evt.loaded / evt.total;
           } else {
             return _this.progress = _this.progress + (100 - _this.progress) / 2;
           }
         }, false);
-        _ref2 = ["load", "abort", "timeout", "error"];
+        _ref2 = ['load', 'abort', 'timeout', 'error'];
         for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
           event = _ref2[_j];
           request.addEventListener(event, function() {
@@ -645,7 +618,7 @@
       var event, _j, _len1, _ref2,
         _this = this;
       this.progress = 0;
-      _ref2 = ["error", "open"];
+      _ref2 = ['error', 'open'];
       for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
         event = _ref2[_j];
         request.addEventListener(event, function() {
@@ -709,7 +682,7 @@
     DocumentMonitor.prototype.states = {
       loading: 0,
       interactive: 50,
-      complete: 100,
+      complete: 100
     };
 
     function DocumentMonitor() {
@@ -768,14 +741,14 @@
       this.catchup = 0;
       this.progress = this.lastProgress = 0;
       if (this.source != null) {
-        this.progress = result(this.source, "progress");
+        this.progress = result(this.source, 'progress');
       }
     }
 
     Scaler.prototype.tick = function(frameTime, val) {
       var scaling;
       if (val == null) {
-        val = result(this.source, "progress");
+        val = result(this.source, 'progress');
       }
       if (val >= 100) {
         this.done = true;
@@ -846,13 +819,13 @@
     ajax: AjaxMonitor,
     elements: ElementMonitor,
     document: DocumentMonitor,
-    eventLag: EventLagMonitor,
+    eventLag: EventLagMonitor
   };
 
   (init = function() {
     var type, _j, _k, _len1, _len2, _ref2, _ref3, _ref4;
     Pace.sources = sources = [];
-    _ref2 = ["ajax", "elements", "document", "eventLag"];
+    _ref2 = ['ajax', 'elements', 'document', 'eventLag'];
     for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
       type = _ref2[_j];
       if (options[type] !== false) {
@@ -870,7 +843,7 @@
   })();
 
   Pace.stop = function() {
-    Pace.trigger("stop");
+    Pace.trigger('stop');
     Pace.running = false;
     bar.destroy();
     cancelAnimation = true;
@@ -884,7 +857,7 @@
   };
 
   Pace.restart = function() {
-    Pace.trigger("restart");
+    Pace.trigger('restart');
     Pace.stop();
     return Pace.start();
   };
@@ -919,11 +892,11 @@
       bar.update(uniScaler.tick(frameTime, avg));
       if (bar.done() || done || cancelAnimation) {
         bar.update(100);
-        Pace.trigger("done");
+        Pace.trigger('done');
         return setTimeout(function() {
           bar.finish();
           Pace.running = false;
-          return Pace.trigger("hide");
+          return Pace.trigger('hide');
         }, Math.max(options.ghostTime, Math.max(options.minTime - (now() - start), 0)));
       } else {
         return enqueueNextFrame();
@@ -939,19 +912,19 @@
     } catch (_error) {
       NoTargetError = _error;
     }
-    if (!document.querySelector(".pace")) {
+    if (!document.querySelector('.pace')) {
       return setTimeout(Pace.start, 50);
     } else {
-      Pace.trigger("start");
+      Pace.trigger('start');
       return Pace.go();
     }
   };
 
-  if (typeof define === "function" && define.amd) {
-    define(["pace"], function() {
+  if (typeof define === 'function' && define.amd) {
+    define(['pace'], function() {
       return Pace;
     });
-  } else if (typeof exports === "object") {
+  } else if (typeof exports === 'object') {
     module.exports = Pace;
   } else {
     if (options.startOnPageLoad) {

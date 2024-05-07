@@ -13,7 +13,7 @@ description: 32 commands
 - **Available Filters**:
 
 |         |           |           |          |
-|---------|-----------|-----------|----------|
+| ------- | --------- | --------- | -------- |
 | blur    | brighten  | burn      | darken   |
 | distort | greyscale | invert    | pixelate |
 | sepia   | sharpen   | threshold |          |
@@ -27,7 +27,7 @@ description: 32 commands
 - **Available Filters**:
 
 |          |          |                 |           |
-|----------|----------|-----------------|-----------|
+| -------- | -------- | --------------- | --------- |
 | approved | brazzers | gay             | halloween |
 | rejected | thuglife | to-be-continued | wasted    |
 
@@ -40,7 +40,7 @@ description: 32 commands
 - **Available Generators**:
 
 |        |               |              |          |
-|--------|---------------|--------------|----------|
+| ------ | ------------- | ------------ | -------- |
 | ad     | affect        | beautiful    | bobross  |
 | color  | confusedstonk | delete       | facepalm |
 | hitler | jail          | jokeoverhead | karaba   |

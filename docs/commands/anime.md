@@ -12,7 +12,7 @@ description: 10 commands
 - **Cooldown**: 5 seconds
 
 |      |      |        |
-|------|------|--------|
+| ---- | ---- | ------ |
 | hug  | kiss | cuddle |
 | feed | pat  | poke   |
 | slap | smug | tickle |
