@@ -7,5 +7,5 @@
 */
 
 "function" == typeof define && define.amd ? define(function() {
-  return document;
+    return document;
 }) : "object" == typeof exports && (module.exports = document);

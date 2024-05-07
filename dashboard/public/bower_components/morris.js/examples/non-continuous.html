@@ -5,15 +5,15 @@
   <script src="../morris.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
   <script src="lib/example.js"></script>
-  <link href="lib/example.css" rel="stylesheet">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css" rel="stylesheet">
-  <link href="../morris.css" rel="stylesheet">
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
 </head>
 <body>
 <h1>Non-continuous data</h1>
 <p>Null series values will break the line when rendering, missing values will be skipped</p>
 <div id="graph"></div>
-<pre class="prettyprint linenums" id="code">
+<pre id="code" class="prettyprint linenums">
 /* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
 var day_data = [
   {"period": "2012-10-01", "licensed": 3407},

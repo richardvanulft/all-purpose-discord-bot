@@ -8,13 +8,13 @@ Highlight.js нужен для подсветки синтаксиса в при
 Автоопределением языка можно управлять, когда оно не справляется само (см.
 дальше "Эвристика").
 
+
 ## Простое использование
 
 Подключите библиотеку и стиль на страницу и повесть вызов подсветки на
 загрузку страницы:
 
 ```html
-
 <link rel="stylesheet" href="styles/default.css">
 <script src="highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -33,6 +33,7 @@ Highlight.js нужен для подсветки синтаксиса в при
   будет полезен [CSS classes reference][cr], который тоже есть в архиве.
 
 [cr]: http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html
+
 
 ## node.js
 
@@ -57,9 +58,10 @@ hljs.highlight(lang, code).value;
 hljs.highlightAuto(code).value;
 ```
 
+
 ## AMD
 
-Highlight.js можно использовать с загрузчиком AMD-модулей. Для этого его
+Highlight.js можно использовать с загрузчиком AMD-модулей.  Для этого его
 нужно собрать из исходников следующей командой:
 
 ```bash
@@ -70,7 +72,7 @@ $ python3 tools/build.py -tamd lang1 lang2 ..
 AMD-модулем и содержит все выбранные при сборке языки. Используется он так:
 
 ```javascript
-require(["highlight.js/build/highlight.pack"], function(hljs) {
+require(["highlight.js/build/highlight.pack"], function(hljs){
 
   // Если вы знаете язык
   hljs.highlight(lang, code).value;
@@ -80,6 +82,7 @@ require(["highlight.js/build/highlight.pack"], function(hljs) {
 });
 ```
 
+
 ## Замена TABов
 
 Также вы можете заменить символы TAB ('\x09'), используемые для отступов, на
@@ -87,15 +90,15 @@ require(["highlight.js/build/highlight.pack"], function(hljs) {
 какой-нибудь специальный стиль:
 
 ```html
-
 <script type="text/javascript">
-  hljs.configure({ tabReplace: '    ' }); // 4 spaces
+  hljs.configure({tabReplace: '    '}); // 4 spaces
   // ... or
-  hljs.configure({ tabReplace: '<span class="indent">\t</span>' });
+  hljs.configure({tabReplace: '<span class="indent">\t</span>'});
 
   hljs.initHighlightingOnLoad();
 </script>
 ```
+
 
 ## Инициализация вручную
 
@@ -107,9 +110,7 @@ require(["highlight.js/build/highlight.pack"], function(hljs) {
 
 ```javascript
 $(document).ready(function() {
-  $('pre code').each(function(i, e) {
-    hljs.highlightBlock(e)
-  });
+  $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
 });
 ```
 
@@ -121,11 +122,10 @@ $(document).ready(function() {
 `<pre>`), включите опцию `useBR`:
 
 ```javascript
-hljs.configure({ useBR: true });
-$('div.code').each(function(i, e) {
-  hljs.highlightBlock(e)
-});
+hljs.configure({useBR: true});
+$('div.code').each(function(i, e) {hljs.highlightBlock(e)});
 ```
+
 
 ## Эвристика
 
@@ -140,7 +140,6 @@ $('div.code').each(function(i, e) {
 его название в виде класса к элементу `<code>`:
 
 ```html
-
 <pre><code class="html">...</code></pre>
 ```
 
@@ -151,9 +150,9 @@ $('div.code').each(function(i, e) {
 Чтобы запретить расцветку фрагмента вообще, используется класс "no-highlight":
 
 ```html
-
 <pre><code class="no-highlight">...</code></pre>
 ```
+
 
 ## Экспорт
 
@@ -161,6 +160,7 @@ $('div.code').each(function(i, e) {
 скопировать непосредственно HTML-код подсветки для любого заданного фрагмента кода.
 Это может понадобится например на сайте, на котором нельзя подключить сам скрипт
 highlight.js.
+
 
 ## Координаты
 

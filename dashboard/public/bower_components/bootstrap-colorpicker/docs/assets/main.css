@@ -45,20 +45,17 @@ h4 ~ p {
 }
 
 
-.example-title {
+.example-title{
   font-size: 14px;
   margin: 10px 0 10px 2px;
   font-weight: bold;
 }
-
-.example-description {
+.example-description{
   margin: 10px 0 10px 2px;
 }
-
-.example-code {
-  display: none;
+.example-code{
+  display:none;
 }
-
-.example-content-widget {
+.example-content-widget{
   margin-bottom: 2px;
 }

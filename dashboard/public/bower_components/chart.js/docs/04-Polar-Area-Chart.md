@@ -2,14 +2,10 @@
 title: Polar Area Chart
 anchor: polar-area-chart
 ---
-
 ### Introduction
+Polar area charts are similar to pie charts, but each segment has the same angle - the radius of the segment differs depending on the value.
 
-Polar area charts are similar to pie charts, but each segment has the same angle - the radius of the segment differs
-depending on the value.
-
-This type of chart is often useful when we want to show a comparison data similar to a pie chart, but also show a scale
-of values for context.
+This type of chart is often useful when we want to show a comparison data similar to a pie chart, but also show a scale of values for context.
 
 <div class="canvas-holder">
 	<canvas width="250" height="125"></canvas>
@@ -58,16 +54,11 @@ var data = [
 
 ];
 ```
-
-As you can see, for the chart data you pass in an array of objects, with a value and a colour. The value attribute
-should be a number, while the color attribute should be a string. Similar to CSS, for this string you can use HEX
-notation, RGB, RGBA or HSL.
+As you can see, for the chart data you pass in an array of objects, with a value and a colour. The value attribute should be a number, while the color attribute should be a string. Similar to CSS, for this string you can use HEX notation, RGB, RGBA or HSL.
 
 ### Chart options
 
-These are the customisation options specific to Polar Area charts. These options are merged with
-the [global chart configuration options](#getting-started-global-chart-configuration), and form the options of the
-chart.
+These are the customisation options specific to Polar Area charts. These options are merged with the [global chart configuration options](#getting-started-global-chart-configuration), and form the options of the chart.
 
 ```javascript
 {
@@ -116,8 +107,7 @@ chart.
 }
 ```
 
-You can override these for your `Chart` instance by passing a second argument into the `PolarArea` method as an object
-with the keys you want to override.
+You can override these for your `Chart` instance by passing a second argument into the `PolarArea` method as an object with the keys you want to override.
 
 For example, we could have a polar area chart with a black stroke on each segment like so:
 
@@ -129,15 +119,13 @@ new Chart(ctx).PolarArea(data, {
 // and the PolarArea chart defaults but this particular instance will have `segmentStrokeColor` set to `"#000000"`.
 ```
 
-We can also change these defaults values for each PolarArea type that is created, this object is available
-at `Chart.defaults.PolarArea`.
+We can also change these defaults values for each PolarArea type that is created, this object is available at `Chart.defaults.PolarArea`.
 
 ### Prototype methods
 
 #### .getSegmentsAtEvent( event )
 
-Calling `getSegmentsAtEvent(event)` on your Chart instance passing an argument of an event, or jQuery event, will return
-the segment elements that are at that the same position of that event.
+Calling `getSegmentsAtEvent(event)` on your Chart instance passing an argument of an event, or jQuery event, will return the segment elements that are at that the same position of that event.
 
 ```javascript
 canvas.onclick = function(evt){
@@ -146,13 +134,11 @@ canvas.onclick = function(evt){
 };
 ```
 
-This functionality may be useful for implementing DOM based tooltips, or triggering custom behaviour in your
-application.
+This functionality may be useful for implementing DOM based tooltips, or triggering custom behaviour in your application.
 
 #### .update( )
 
-Calling `update()` on your Chart instance will re-render the chart with any updated values, allowing you to edit the
-value of multiple existing points, then render those in one animated render loop.
+Calling `update()` on your Chart instance will re-render the chart with any updated values, allowing you to edit the value of multiple existing points, then render those in one animated render loop.
 
 ```javascript
 myPolarAreaChart.segments[1].value = 10;
@@ -163,9 +149,7 @@ myPolarAreaChart.update();
 
 #### .addData( segmentData, index )
 
-Calling `addData(segmentData, index)` on your Chart instance passing an object in the same format as in the constructor.
-There is an option second argument of 'index', this determines at what index the new segment should be inserted into the
-chart.
+Calling `addData(segmentData, index)` on your Chart instance passing an object in the same format as in the constructor. There is an option second argument of 'index', this determines at what index the new segment should be inserted into the chart.
 
 ```javascript
 // An object in the same format as the original data source
@@ -180,8 +164,7 @@ myPolarAreaChart.addData({
 
 #### .removeData( index )
 
-Calling `removeData(index)` on your Chart instance will remove segment at that particular index. If none is provided, it
-will default to the last segment.
+Calling `removeData(index)` on your Chart instance will remove segment at that particular index. If none is provided, it will default to the last segment.
 
 ```javascript
 myPolarAreaChart.removeData();

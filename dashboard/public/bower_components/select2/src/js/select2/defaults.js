@@ -1,54 +1,60 @@
 define([
-  "jquery",
-  "require",
+  'jquery',
+  'require',
 
-  "./results",
+  './results',
 
-  "./selection/single",
-  "./selection/multiple",
-  "./selection/placeholder",
-  "./selection/allowClear",
-  "./selection/search",
-  "./selection/eventRelay",
+  './selection/single',
+  './selection/multiple',
+  './selection/placeholder',
+  './selection/allowClear',
+  './selection/search',
+  './selection/eventRelay',
 
-  "./utils",
-  "./translation",
-  "./diacritics",
+  './utils',
+  './translation',
+  './diacritics',
 
-  "./data/select",
-  "./data/array",
-  "./data/ajax",
-  "./data/tags",
-  "./data/tokenizer",
-  "./data/minimumInputLength",
-  "./data/maximumInputLength",
-  "./data/maximumSelectionLength",
+  './data/select',
+  './data/array',
+  './data/ajax',
+  './data/tags',
+  './data/tokenizer',
+  './data/minimumInputLength',
+  './data/maximumInputLength',
+  './data/maximumSelectionLength',
 
-  "./dropdown",
-  "./dropdown/search",
-  "./dropdown/hidePlaceholder",
-  "./dropdown/infiniteScroll",
-  "./dropdown/attachBody",
-  "./dropdown/minimumResultsForSearch",
-  "./dropdown/selectOnClose",
-  "./dropdown/closeOnSelect",
+  './dropdown',
+  './dropdown/search',
+  './dropdown/hidePlaceholder',
+  './dropdown/infiniteScroll',
+  './dropdown/attachBody',
+  './dropdown/minimumResultsForSearch',
+  './dropdown/selectOnClose',
+  './dropdown/closeOnSelect',
 
-  "./i18n/en",
-], function($, require,
-            ResultsList,
-            SingleSelection, MultipleSelection, Placeholder, AllowClear,
-            SelectionSearch, EventRelay,
-            Utils, Translation, DIACRITICS,
-            SelectData, ArrayData, AjaxData, Tags, Tokenizer,
-            MinimumInputLength, MaximumInputLength, MaximumSelectionLength,
-            Dropdown, DropdownSearch, HidePlaceholder, InfiniteScroll,
-            AttachBody, MinimumResultsForSearch, SelectOnClose, CloseOnSelect,
-            EnglishTranslation) {
-  function Defaults() {
+  './i18n/en'
+], function ($, require,
+
+             ResultsList,
+
+             SingleSelection, MultipleSelection, Placeholder, AllowClear,
+             SelectionSearch, EventRelay,
+
+             Utils, Translation, DIACRITICS,
+
+             SelectData, ArrayData, AjaxData, Tags, Tokenizer,
+             MinimumInputLength, MaximumInputLength, MaximumSelectionLength,
+
+             Dropdown, DropdownSearch, HidePlaceholder, InfiniteScroll,
+             AttachBody, MinimumResultsForSearch, SelectOnClose, CloseOnSelect,
+
+             EnglishTranslation) {
+  function Defaults () {
     this.reset();
   }
 
-  Defaults.prototype.apply = function(options) {
+  Defaults.prototype.apply = function (options) {
     options = $.extend(true, {}, this.defaults, options);
 
     if (options.dataAdapter == null) {
@@ -63,21 +69,21 @@ define([
       if (options.minimumInputLength > 0) {
         options.dataAdapter = Utils.Decorate(
           options.dataAdapter,
-          MinimumInputLength,
+          MinimumInputLength
         );
       }
 
       if (options.maximumInputLength > 0) {
         options.dataAdapter = Utils.Decorate(
           options.dataAdapter,
-          MaximumInputLength,
+          MaximumInputLength
         );
       }
 
       if (options.maximumSelectionLength > 0) {
         options.dataAdapter = Utils.Decorate(
           options.dataAdapter,
-          MaximumSelectionLength,
+          MaximumSelectionLength
         );
       }
 
@@ -88,25 +94,25 @@ define([
       if (options.tokenSeparators != null || options.tokenizer != null) {
         options.dataAdapter = Utils.Decorate(
           options.dataAdapter,
-          Tokenizer,
+          Tokenizer
         );
       }
 
       if (options.query != null) {
-        var Query = require(options.amdBase + "compat/query");
+        var Query = require(options.amdBase + 'compat/query');
 
         options.dataAdapter = Utils.Decorate(
           options.dataAdapter,
-          Query,
+          Query
         );
       }
 
       if (options.initSelection != null) {
-        var InitSelection = require(options.amdBase + "compat/initSelection");
+        var InitSelection = require(options.amdBase + 'compat/initSelection');
 
         options.dataAdapter = Utils.Decorate(
           options.dataAdapter,
-          InitSelection,
+          InitSelection
         );
       }
     }
@@ -117,21 +123,21 @@ define([
       if (options.ajax != null) {
         options.resultsAdapter = Utils.Decorate(
           options.resultsAdapter,
-          InfiniteScroll,
+          InfiniteScroll
         );
       }
 
       if (options.placeholder != null) {
         options.resultsAdapter = Utils.Decorate(
           options.resultsAdapter,
-          HidePlaceholder,
+          HidePlaceholder
         );
       }
 
       if (options.selectOnClose) {
         options.resultsAdapter = Utils.Decorate(
           options.resultsAdapter,
-          SelectOnClose,
+          SelectOnClose
         );
       }
     }
@@ -148,14 +154,14 @@ define([
       if (options.minimumResultsForSearch !== 0) {
         options.dropdownAdapter = Utils.Decorate(
           options.dropdownAdapter,
-          MinimumResultsForSearch,
+          MinimumResultsForSearch
         );
       }
 
       if (options.closeOnSelect) {
         options.dropdownAdapter = Utils.Decorate(
           options.dropdownAdapter,
-          CloseOnSelect,
+          CloseOnSelect
         );
       }
 
@@ -164,17 +170,17 @@ define([
         options.dropdownCss != null ||
         options.adaptDropdownCssClass != null
       ) {
-        var DropdownCSS = require(options.amdBase + "compat/dropdownCss");
+        var DropdownCSS = require(options.amdBase + 'compat/dropdownCss');
 
         options.dropdownAdapter = Utils.Decorate(
           options.dropdownAdapter,
-          DropdownCSS,
+          DropdownCSS
         );
       }
 
       options.dropdownAdapter = Utils.Decorate(
         options.dropdownAdapter,
-        AttachBody,
+        AttachBody
       );
     }
 
@@ -189,21 +195,21 @@ define([
       if (options.placeholder != null) {
         options.selectionAdapter = Utils.Decorate(
           options.selectionAdapter,
-          Placeholder,
+          Placeholder
         );
       }
 
       if (options.allowClear) {
         options.selectionAdapter = Utils.Decorate(
           options.selectionAdapter,
-          AllowClear,
+          AllowClear
         );
       }
 
       if (options.multiple) {
         options.selectionAdapter = Utils.Decorate(
           options.selectionAdapter,
-          SelectionSearch,
+          SelectionSearch
         );
       }
 
@@ -212,25 +218,25 @@ define([
         options.containerCss != null ||
         options.adaptContainerCssClass != null
       ) {
-        var ContainerCSS = require(options.amdBase + "compat/containerCss");
+        var ContainerCSS = require(options.amdBase + 'compat/containerCss');
 
         options.selectionAdapter = Utils.Decorate(
           options.selectionAdapter,
-          ContainerCSS,
+          ContainerCSS
         );
       }
 
       options.selectionAdapter = Utils.Decorate(
         options.selectionAdapter,
-        EventRelay,
+        EventRelay
       );
     }
 
-    if (typeof options.language === "string") {
+    if (typeof options.language === 'string') {
       // Check if the language is specified with a region
-      if (options.language.indexOf("-") > 0) {
+      if (options.language.indexOf('-') > 0) {
         // Extract the region information if it is included
-        var languageParts = options.language.split("-");
+        var languageParts = options.language.split('-');
         var baseLanguage = languageParts[0];
 
         options.language = [options.language, baseLanguage];
@@ -241,7 +247,7 @@ define([
 
     if ($.isArray(options.language)) {
       var languages = new Translation();
-      options.language.push("en");
+      options.language.push('en');
 
       var languageNames = options.language;
 
@@ -263,8 +269,8 @@ define([
             // because of how Select2 helps load all possible translation files.
             if (options.debug && window.console && console.warn) {
               console.warn(
-                "Select2: The language file for \"" + name + "\" could not be " +
-                "automatically loaded. A fallback will be used instead.",
+                'Select2: The language file for "' + name + '" could not be ' +
+                'automatically loaded. A fallback will be used instead.'
               );
             }
 
@@ -278,7 +284,7 @@ define([
       options.translations = languages;
     } else {
       var baseTranslation = Translation.loadPath(
-        this.defaults.amdLanguageBase + "en",
+        this.defaults.amdLanguageBase + 'en'
       );
       var customTranslation = new Translation(options.language);
 
@@ -290,8 +296,8 @@ define([
     return options;
   };
 
-  Defaults.prototype.reset = function() {
-    function stripDiacritics(text) {
+  Defaults.prototype.reset = function () {
+    function stripDiacritics (text) {
       // Used 'uni range + named function' from http://jsperf.com/diacritics/18
       function match(a) {
         return DIACRITICS[a] || a;
@@ -300,9 +306,9 @@ define([
       return text.replace(/[^\u0000-\u007E]/g, match);
     }
 
-    function matcher(params, data) {
+    function matcher (params, data) {
       // Always return the object if there is nothing to compare
-      if ($.trim(params.term) === "") {
+      if ($.trim(params.term) === '') {
         return data;
       }
 
@@ -346,8 +352,8 @@ define([
     }
 
     this.defaults = {
-      amdBase: "./",
-      amdLanguageBase: "./i18n/",
+      amdBase: './',
+      amdLanguageBase: './i18n/',
       closeOnSelect: true,
       debug: false,
       dropdownAutoWidth: false,
@@ -360,21 +366,21 @@ define([
       minimumResultsForSearch: 0,
       selectOnClose: false,
       scrollAfterSelect: false,
-      sorter: function(data) {
+      sorter: function (data) {
         return data;
       },
-      templateResult: function(result) {
+      templateResult: function (result) {
         return result.text;
       },
-      templateSelection: function(selection) {
+      templateSelection: function (selection) {
         return selection.text;
       },
-      theme: "default",
-      width: "resolve",
+      theme: 'default',
+      width: 'resolve'
     };
   };
 
-  Defaults.prototype.set = function(key, value) {
+  Defaults.prototype.set = function (key, value) {
     var camelKey = $.camelCase(key);
 
     var data = {};

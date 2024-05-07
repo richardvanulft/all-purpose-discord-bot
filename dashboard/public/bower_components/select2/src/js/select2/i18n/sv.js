@@ -1,40 +1,40 @@
-define(function() {
+define(function () {
   // Swedish
   return {
-    errorLoading: function() {
-      return "Resultat kunde inte laddas.";
+    errorLoading: function () {
+      return 'Resultat kunde inte laddas.';
     },
-    inputTooLong: function(args) {
+    inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      var message = "Vänligen sudda ut " + overChars + " tecken";
+      var message = 'Vänligen sudda ut ' + overChars + ' tecken';
 
       return message;
     },
-    inputTooShort: function(args) {
+    inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
 
-      var message = "Vänligen skriv in " + remainingChars +
-        " eller fler tecken";
+      var message = 'Vänligen skriv in ' + remainingChars +
+                    ' eller fler tecken';
 
       return message;
     },
-    loadingMore: function() {
-      return "Laddar fler resultat…";
+    loadingMore: function () {
+      return 'Laddar fler resultat…';
     },
-    maximumSelected: function(args) {
-      var message = "Du kan max välja " + args.maximum + " element";
+    maximumSelected: function (args) {
+      var message = 'Du kan max välja ' + args.maximum + ' element';
 
       return message;
     },
-    noResults: function() {
-      return "Inga träffar";
+    noResults: function () {
+      return 'Inga träffar';
     },
-    searching: function() {
-      return "Söker…";
+    searching: function () {
+      return 'Söker…';
     },
-    removeAllItems: function() {
-      return "Ta bort alla objekt";
-    },
+    removeAllItems: function () {
+      return 'Ta bort alla objekt';
+    }
   };
 });

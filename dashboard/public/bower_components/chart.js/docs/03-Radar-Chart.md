@@ -19,7 +19,6 @@ var myRadarChart = new Chart(ctx).Radar(data, options);
 ```
 
 ###Data structure
-
 ```javascript
 var data = {
 	labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
@@ -47,19 +46,15 @@ var data = {
 	]
 };
 ```
-
-For a radar chart, to provide context of what each point means, we include an array of strings that show around each
-point in the chart.
-For the radar chart data, we have an array of datasets. Each of these is an object, with a fill colour, a stroke colour,
-a colour for the fill of each point, and a colour for the stroke of each point. We also have an array of data values.
+For a radar chart, to provide context of what each point means, we include an array of strings that show around each point in the chart.
+For the radar chart data, we have an array of datasets. Each of these is an object, with a fill colour, a stroke colour, a colour for the fill of each point, and a colour for the stroke of each point. We also have an array of data values.
 
 The label key on each dataset is optional, and can be used when generating a scale for the chart.
 
 ### Chart options
 
-These are the customisation options specific to Radar charts. These options are merged with
-the [global chart configuration options](#getting-started-global-chart-configuration), and form the options of the
-chart.
+These are the customisation options specific to Radar charts. These options are merged with the [global chart configuration options](#getting-started-global-chart-configuration), and form the options of the chart.
+
 
 ```javascript
 {
@@ -120,8 +115,8 @@ chart.
 }
 ```
 
-You can override these for your `Chart` instance by passing a second argument into the `Radar` method as an object with
-the keys you want to override.
+
+You can override these for your `Chart` instance by passing a second argument into the `Radar` method as an object with the keys you want to override.
 
 For example, we could have a radar chart without a point for each on piece of data by doing the following:
 
@@ -133,15 +128,14 @@ new Chart(ctx).Radar(data, {
 //  and the Bar chart defaults but this particular instance will have `pointDot` set to false.
 ```
 
-We can also change these defaults values for each Radar type that is created, this object is available
-at `Chart.defaults.Radar`.
+We can also change these defaults values for each Radar type that is created, this object is available at `Chart.defaults.Radar`.
+
 
 ### Prototype methods
 
 #### .getPointsAtEvent( event )
 
-Calling `getPointsAtEvent(event)` on your Chart instance passing an argument of an event, or jQuery event, will return
-the point elements that are at that the same position of that event.
+Calling `getPointsAtEvent(event)` on your Chart instance passing an argument of an event, or jQuery event, will return the point elements that are at that the same position of that event.
 
 ```javascript
 canvas.onclick = function(evt){
@@ -150,13 +144,11 @@ canvas.onclick = function(evt){
 };
 ```
 
-This functionality may be useful for implementing DOM based tooltips, or triggering custom behaviour in your
-application.
+This functionality may be useful for implementing DOM based tooltips, or triggering custom behaviour in your application.
 
 #### .update( )
 
-Calling `update()` on your Chart instance will re-render the chart with any updated values, allowing you to edit the
-value of multiple existing points, then render those in one animated render loop.
+Calling `update()` on your Chart instance will re-render the chart with any updated values, allowing you to edit the value of multiple existing points, then render those in one animated render loop.
 
 ```javascript
 myRadarChart.datasets[0].points[2].value = 50;
@@ -167,8 +159,7 @@ myRadarChart.update();
 
 #### .addData( valuesArray, label )
 
-Calling `addData(valuesArray, label)` on your Chart instance passing an array of values for each dataset, along with a
-label for those points.
+Calling `addData(valuesArray, label)` on your Chart instance passing an array of values for each dataset, along with a label for those points.
 
 ```javascript
 // The values array passed into addData should be one for each dataset in the chart

@@ -9,5 +9,5 @@ before_script:
 script:
   - yarn install
   - grunt --verbose
-  # Check that files didn't change after running grunt. It should be run before pushing any code change.
+    # Check that files didn't change after running grunt. It should be run before pushing any code change.
   - if ! git diff --name-only --quiet -- dist docs src index.html --; then echo \"Files where modified after grunt execution!!...\"; exit 1; fi

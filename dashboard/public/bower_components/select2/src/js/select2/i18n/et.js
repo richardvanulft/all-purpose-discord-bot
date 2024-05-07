@@ -1,56 +1,56 @@
-define(function() {
+define(function () {
   // Estonian
   return {
-    inputTooLong: function(args) {
+    inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      var message = "Sisesta " + overChars + " täht";
+      var message = 'Sisesta ' + overChars + ' täht';
 
       if (overChars != 1) {
-        message += "e";
+        message += 'e';
       }
 
-      message += " vähem";
+      message += ' vähem';
 
       return message;
     },
-    inputTooShort: function(args) {
+    inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
 
-      var message = "Sisesta " + remainingChars + " täht";
+      var message = 'Sisesta ' + remainingChars + ' täht';
 
       if (remainingChars != 1) {
-        message += "e";
+        message += 'e';
       }
 
-      message += " rohkem";
+      message += ' rohkem';
 
       return message;
     },
-    loadingMore: function() {
-      return "Laen tulemusi…";
+    loadingMore: function () {
+      return 'Laen tulemusi…';
     },
-    maximumSelected: function(args) {
-      var message = "Saad vaid " + args.maximum + " tulemus";
+    maximumSelected: function (args) {
+      var message = 'Saad vaid ' + args.maximum + ' tulemus';
 
       if (args.maximum == 1) {
-        message += "e";
+        message += 'e';
       } else {
-        message += "t";
+        message += 't';
       }
 
-      message += " valida";
+      message += ' valida';
 
       return message;
     },
-    noResults: function() {
-      return "Tulemused puuduvad";
+    noResults: function () {
+      return 'Tulemused puuduvad';
     },
-    searching: function() {
-      return "Otsin…";
+    searching: function () {
+      return 'Otsin…';
     },
-    removeAllItems: function() {
-      return "Eemalda kõik esemed";
-    },
+    removeAllItems: function () {
+      return 'Eemalda kõik esemed';
+    }
   };
 });

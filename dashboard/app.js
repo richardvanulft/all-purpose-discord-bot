@@ -47,9 +47,9 @@ module.exports.launch = async (client) => {
           autoRemove: "interval",
           autoRemoveInterval: 1,
         }),
-      }),
+      })
     ) // Set the express session password and configuration
-    .use(async function(req, res, next) {
+    .use(async function (req, res, next) {
       req.user = req.session.user;
       req.client = client;
       if (req.user && req.url !== "/") req.userInfos = await utils.fetchUser(req.user, req.client);
@@ -59,13 +59,13 @@ module.exports.launch = async (client) => {
     .use("/logout", logoutRouter)
     .use("/manage", guildManagerRouter)
     .use("/", mainRouter)
-    .use(CheckAuth, function(req, res) {
+    .use(CheckAuth, function (req, res) {
       res.status(404).render("404", {
         user: req.userInfos,
         currentURL: `${req.protocol}://${req.get("host")}${req.originalUrl}`,
       });
     })
-    .use(CheckAuth, function(err, req, res) {
+    .use(CheckAuth, function (err, req, res) {
       console.error(err.stack);
       if (!req.user) return res.redirect("/");
       res.status(500).render("500", {

@@ -1,4 +1,4 @@
-define(function() {
+define(function () {
   // rules from
   // http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html#lt
   function ending(count, one, few, other) {
@@ -14,42 +14,42 @@ define(function() {
   }
 
   return {
-    inputTooLong: function(args) {
+    inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      var message = "Pašalinkite " + overChars + " simbol";
+      var message = 'Pašalinkite ' + overChars + ' simbol';
 
-      message += ending(overChars, "į", "ius", "ių");
+      message += ending(overChars, 'į', 'ius', 'ių');
 
       return message;
     },
-    inputTooShort: function(args) {
+    inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
 
-      var message = "Įrašykite dar " + remainingChars + " simbol";
+      var message = 'Įrašykite dar ' + remainingChars + ' simbol';
 
-      message += ending(remainingChars, "į", "ius", "ių");
-
-      return message;
-    },
-    loadingMore: function() {
-      return "Kraunama daugiau rezultatų…";
-    },
-    maximumSelected: function(args) {
-      var message = "Jūs galite pasirinkti tik " + args.maximum + " element";
-
-      message += ending(args.maximum, "ą", "us", "ų");
+      message += ending(remainingChars, 'į', 'ius', 'ių');
 
       return message;
     },
-    noResults: function() {
-      return "Atitikmenų nerasta";
+    loadingMore: function () {
+      return 'Kraunama daugiau rezultatų…';
     },
-    searching: function() {
-      return "Ieškoma…";
+    maximumSelected: function (args) {
+      var message = 'Jūs galite pasirinkti tik ' + args.maximum + ' element';
+
+      message += ending(args.maximum, 'ą', 'us', 'ų');
+
+      return message;
     },
-    removeAllItems: function() {
-      return "Pašalinti visus elementus";
+    noResults: function () {
+      return 'Atitikmenų nerasta';
     },
+    searching: function () {
+      return 'Ieškoma…';
+    },
+    removeAllItems: function () {
+      return 'Pašalinti visus elementus';
+    }
   };
 });

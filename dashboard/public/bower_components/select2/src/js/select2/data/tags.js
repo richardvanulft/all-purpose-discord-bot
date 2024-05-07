@@ -1,19 +1,19 @@
 define([
-  "jquery",
-], function($) {
-  function Tags(decorated, $element, options) {
-    var tags = options.get("tags");
+  'jquery'
+], function ($) {
+  function Tags (decorated, $element, options) {
+    var tags = options.get('tags');
 
-    var createTag = options.get("createTag");
+    var createTag = options.get('createTag');
 
     if (createTag !== undefined) {
       this.createTag = createTag;
     }
 
-    var insertTag = options.get("insertTag");
+    var insertTag = options.get('insertTag');
 
     if (insertTag !== undefined) {
-      this.insertTag = insertTag;
+        this.insertTag = insertTag;
     }
 
     decorated.call(this, $element, options);
@@ -30,7 +30,7 @@ define([
     }
   }
 
-  Tags.prototype.query = function(decorated, params, callback) {
+  Tags.prototype.query = function (decorated, params, callback) {
     var self = this;
 
     this._removeOldTags();
@@ -40,7 +40,7 @@ define([
       return;
     }
 
-    function wrapper(obj, child) {
+    function wrapper (obj, child) {
       var data = obj.results;
 
       for (var i = 0; i < data.length; i++) {
@@ -49,12 +49,12 @@ define([
         var checkChildren = (
           option.children != null &&
           !wrapper({
-            results: option.children,
+            results: option.children
           }, true)
         );
 
-        var optionText = (option.text || "").toUpperCase();
-        var paramsTerm = (params.term || "").toUpperCase();
+        var optionText = (option.text || '').toUpperCase();
+        var paramsTerm = (params.term || '').toUpperCase();
 
         var checkText = optionText === paramsTerm;
 
@@ -78,7 +78,7 @@ define([
 
       if (tag != null) {
         var $option = self.option(tag);
-        $option.attr("data-select2-tag", true);
+        $option.attr('data-select2-tag', true);
 
         self.addOptions([$option]);
 
@@ -93,29 +93,29 @@ define([
     decorated.call(this, params, wrapper);
   };
 
-  Tags.prototype.createTag = function(decorated, params) {
+  Tags.prototype.createTag = function (decorated, params) {
     var term = $.trim(params.term);
 
-    if (term === "") {
+    if (term === '') {
       return null;
     }
 
     return {
       id: term,
-      text: term,
+      text: term
     };
   };
 
-  Tags.prototype.insertTag = function(_, data, tag) {
+  Tags.prototype.insertTag = function (_, data, tag) {
     data.unshift(tag);
   };
 
-  Tags.prototype._removeOldTags = function(_) {
+  Tags.prototype._removeOldTags = function (_) {
     var tag = this._lastTag;
 
-    var $options = this.$element.find("option[data-select2-tag]");
+    var $options = this.$element.find('option[data-select2-tag]');
 
-    $options.each(function() {
+    $options.each(function () {
       if (this.selected) {
         return;
       }

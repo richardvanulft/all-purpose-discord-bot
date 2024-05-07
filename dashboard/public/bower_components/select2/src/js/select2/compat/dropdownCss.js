@@ -1,45 +1,44 @@
 define([
-  "jquery",
-  "./utils",
-], function($, CompatUtils) {
+  'jquery',
+  './utils'
+], function ($, CompatUtils) {
   // No-op CSS adapter that discards all classes by default
-  function _dropdownAdapter(clazz) {
+  function _dropdownAdapter (clazz) {
     return null;
   }
 
-  function DropdownCSS() {
-  }
+  function DropdownCSS () { }
 
-  DropdownCSS.prototype.render = function(decorated) {
+  DropdownCSS.prototype.render = function (decorated) {
     var $dropdown = decorated.call(this);
 
-    var dropdownCssClass = this.options.get("dropdownCssClass") || "";
+    var dropdownCssClass = this.options.get('dropdownCssClass') || '';
 
     if ($.isFunction(dropdownCssClass)) {
       dropdownCssClass = dropdownCssClass(this.$element);
     }
 
-    var dropdownCssAdapter = this.options.get("adaptDropdownCssClass");
+    var dropdownCssAdapter = this.options.get('adaptDropdownCssClass');
     dropdownCssAdapter = dropdownCssAdapter || _dropdownAdapter;
 
-    if (dropdownCssClass.indexOf(":all:") !== -1) {
-      dropdownCssClass = dropdownCssClass.replace(":all:", "");
+    if (dropdownCssClass.indexOf(':all:') !== -1) {
+      dropdownCssClass = dropdownCssClass.replace(':all:', '');
 
       var _cssAdapter = dropdownCssAdapter;
 
-      dropdownCssAdapter = function(clazz) {
+      dropdownCssAdapter = function (clazz) {
         var adapted = _cssAdapter(clazz);
 
         if (adapted != null) {
           // Append the old one along with the adapted one
-          return adapted + " " + clazz;
+          return adapted + ' ' + clazz;
         }
 
         return clazz;
       };
     }
 
-    var dropdownCss = this.options.get("dropdownCss") || {};
+    var dropdownCss = this.options.get('dropdownCss') || {};
 
     if ($.isFunction(dropdownCss)) {
       dropdownCss = dropdownCss(this.$element);

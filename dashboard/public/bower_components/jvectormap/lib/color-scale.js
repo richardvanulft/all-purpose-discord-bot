@@ -1,6 +1,6 @@
 jvm.ColorScale = function(colors, normalizeFunction, minValue, maxValue) {
   jvm.ColorScale.parentClass.apply(this, arguments);
-};
+}
 
 jvm.inherits(jvm.ColorScale, jvm.NumericScale);
 
@@ -17,13 +17,13 @@ jvm.ColorScale.prototype.getValue = function(value) {
 };
 
 jvm.ColorScale.arrayToRgb = function(ar) {
-  var rgb = "#",
-    d,
-    i;
+  var rgb = '#',
+      d,
+      i;
 
   for (i = 0; i < ar.length; i++) {
     d = ar[i].toString(16);
-    rgb += d.length == 1 ? "0" + d : d;
+    rgb += d.length == 1 ? '0'+d : d;
   }
   return rgb;
 };
@@ -32,10 +32,10 @@ jvm.ColorScale.numToRgb = function(num) {
   num = num.toString(16);
 
   while (num.length < 6) {
-    num = "0" + num;
+    num = '0' + num;
   }
 
-  return "#" + num;
+  return '#'+num;
 };
 
 jvm.ColorScale.rgbToArray = function(rgb) {
