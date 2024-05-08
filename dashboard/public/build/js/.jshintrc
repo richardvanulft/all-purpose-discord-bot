@@ -12,6 +12,7 @@
   "strict"   : true,
   "undef"    : true,
   "unused"   : true,
+  "esversion": 6,
   // External variabls and plugins
   "predef":  [ "AdminLTEOptions", "FastClick", "moment", "Morris", "Chart" ]
 }
