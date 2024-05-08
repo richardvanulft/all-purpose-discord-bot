@@ -103,7 +103,7 @@ module.exports = {
   STATS: {
     ENABLED: true,
     XP_COOLDOWN: 5, // Cooldown in seconds between messages
-    DEFAULT_LVL_UP_MSG: "{member:name}, Je bent nu **Level {level}**",
+    DEFAULT_LVL_UP_MSG: "{member:mention}, Je bent nu **Level {level}**",
   },
 
   SUGGESTIONS: {
