@@ -2,23 +2,51 @@ const { getJson } = require("@helpers/HttpUtils");
 const { success, warn, error } = require("@helpers/Logger");
 
 module.exports = class BotUtils {
+  function;
+
   /**
    * Check if the bot is up to date
    */
   static async checkForUpdates() {
     const response = await getJson("https://api.github.com/repos/richardvanulft/discord-bot/releases/latest");
-    if (!response.success) return error("VersionCheck: Failed to check for bot updates", response.message);
+    if (!response.success) {
+      error("VersionCheck: Failed to check for bot updates", response.message);
+      return false;
+    }
     if (response.data) {
       const latestVersion = response.data.tag_name;
-      if (
-        require("@root/package.json").version.replace(/[^0-9]/g, "") >= latestVersion.replace(/[^0-9]/g, "")
-      ) {
-        success(`VersionCheck: Your discord bot is up to date. Current version is ${latestVersion}`);
-      } else {
-        warn(`VersionCheck: ${latestVersion} update is available`);
-        warn("download: https://github.com/richardvanulft/discord-bot/releases/latest");
+      const currentVersion = require("@root/package.json").version;
+
+      const latestVersionParts = latestVersion.split(".").map(Number);
+      const currentVersionParts = currentVersion.split(".").map(Number);
+
+      for (let i = 0; i < latestVersionParts.length; i++) {
+        if (currentVersionParts[i] > latestVersionParts[i]) {
+          break;
+        } else if (currentVersionParts[i] < latestVersionParts[i]) {
+          warn(`VersionCheck: ${latestVersion} update is available`);
+          warn("download: https://github.com/richardvanulft/discord-bot/releases/latest");
+          return true;
+        }
       }
+
+      success(`VersionCheck: Your discord bot is up to date. Current version is ${latestVersion}`);
     }
+    return false;
+  }
+
+  pullLatestUpdate(client) {
+    exec(`git pull ${process.env.REPO_URL}`, (error, stdout, stderr) => {
+      if (error) {
+        client.logger.error(`Error pulling updates: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        client.logger.error(`Error pulling updates: ${stderr}`);
+        return;
+      }
+      client.logger.log(`Pulled updates: ${stdout}`);
+    });
   }
 
   /**
