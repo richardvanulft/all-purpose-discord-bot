@@ -46,7 +46,13 @@ module.exports = {
         type: ApplicationCommandOptionType.Role,
         required: true,
       },
-    ],
+      {
+        name: "allow_multiple_roles",
+        description: "allow users to have multiple roles from this message",
+        type: ApplicationCommandOptionType.Boolean,
+        required: true,
+      },
+    ]
   },
 
   async messageRun(message, args) {
@@ -69,13 +75,14 @@ module.exports = {
     const messageId = interaction.options.getString("message_id");
     const reaction = interaction.options.getString("emoji");
     const role = interaction.options.getRole("role");
+    const allowMultipleRoles = interaction.options.getBoolean("allow_multiple_roles");
 
-    const response = await addRR(interaction.guild, targetChannel, messageId, reaction, role);
+    const response = await addRR(interaction.guild, targetChannel, messageId, reaction, role, allowMultipleRoles);
     await interaction.followUp(response);
-  },
+  }
 };
 
-async function addRR(guild, channel, messageId, reaction, role) {
+async function addRR(guild, channel, messageId, reaction, role, allowMultipleRoles) {
   if (!channel.permissionsFor(guild.members.me).has(channelPerms)) {
     return `You need the following permissions in ${channel.toString()}\n${parsePermissions(channelPerms)}`;
   }

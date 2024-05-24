@@ -1,5 +1,5 @@
 const { getSettings } = require("@schemas/Guild");
-
+const { getallReactionRoles } = require("@schemas/ReactionRoles");
 const express = require("express"),
   utils = require("../utils"),
   CheckAuth = require("../auth/CheckAuth"),
@@ -26,11 +26,20 @@ router.get("/:serverID/basic", CheckAuth, async (req, res) => {
   // Fetch guild informations
   const guildInfos = await utils.fetchGuild(guild.id, req.client, req.user.guilds);
 
+  let reactionRoles;
+  try {
+    reactionRoles = await getallReactionRoles(guild.id);
+    console.log(reactionRoles);
+  } catch (error) {
+    console.error("Er is een fout opgetreden bij het ophalen van de reaction roles:", error);
+  }
+
   res.render("manager/basic", {
     guild: guildInfos,
     user: req.userInfos,
     bot: req.client,
     currentURL: `${req.client.config.DASHBOARD.baseURL}/${req.originalUrl}`,
+    reactionRoles: reactionRoles,
   });
 });
 
@@ -56,6 +65,31 @@ router.get("/:serverID/greeting", CheckAuth, async (req, res) => {
     user: req.userInfos,
     bot: req.client,
     currentURL: `${req.client.config.DASHBOARD.baseURL}/${req.originalUrl}`,
+  });
+});
+
+router.get("/:serverID/reaction-roles", CheckAuth, async (req, res) => {
+  const guild = req.client.guilds.cache.get(req.params.serverID);
+  if (
+    !guild ||
+    !req.userInfos.displayedGuilds ||
+    !req.userInfos.displayedGuilds.find((g) => g.id === req.params.serverID)
+  ) {
+    return res.render("404", {
+      user: req.userInfos,
+      currentURL: `${req.client.config.DASHBOARD.baseURL}/${req.originalUrl}`,
+    });
+  }
+
+  const guildInfos = await utils.fetchGuild(guild.id, req.client, req.user.guilds);
+  const reactionRoles = await getallReactionRoles(guild.id);
+
+  res.render("manager/reaction-roles", {
+    guild: guildInfos,
+    user: req.userInfos,
+    bot: req.client,
+    currentURL: `${req.client.config.DASHBOARD.baseURL}/${req.originalUrl}`,
+    reactionRoles: reactionRoles,
   });
 });
 

@@ -60,6 +60,15 @@ module.exports = {
 
   getReactionRoles: (guildId, channelId, messageId) => rrCache.get(getKey(guildId, channelId, messageId)) || [],
 
+  getallReactionRoles: async () => {
+    try {
+      const allReactionRoles = await Model.find();
+      return allReactionRoles;
+    } catch (error) {
+      console.error("Er is een fout opgetreden bij het ophalen van alle reaction roles:", error);
+    }
+  },
+
   addReactionRole: async (guildId, channelId, messageId, emote, roleId) => {
     const filter = { guild_id: guildId, channel_id: channelId, message_id: messageId };
 

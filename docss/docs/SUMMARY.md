@@ -3,8 +3,6 @@
 - [🤖 About Me](../README.md)
 - [📘 Commands](commands/README.md)
   - [⚙ Admin](commands/admin.md)
-  - [🔞 Anime](commands/anime.md)
-  - [🪙 Economy](commands/economy.md)
   - [😂 Fun](commands/fun.md)
   - [🎉 Giveaways](commands/giveaways.md)
   - [🖼 Image](commands/image.md)
