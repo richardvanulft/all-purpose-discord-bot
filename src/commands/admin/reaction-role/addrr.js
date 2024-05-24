@@ -50,7 +50,7 @@ module.exports = {
         name: "allow_multiple_roles",
         description: "allow users to have multiple roles from this message",
         type: ApplicationCommandOptionType.Boolean,
-        required: true,
+        required: false,
       },
     ]
   },

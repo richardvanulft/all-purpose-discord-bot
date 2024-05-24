@@ -5,11 +5,18 @@ const reqString = {
   required: true,
 };
 
+const reqBoolean = {
+  type: Boolean,
+  required: true,
+  default: false,
+};
+
 const Schema = new mongoose.Schema(
   {
     guild_id: reqString,
     channel_id: reqString,
     message_id: reqString,
+    allow_multiple_roles: reqBoolean,
     roles: [
       {
         _id: false,
