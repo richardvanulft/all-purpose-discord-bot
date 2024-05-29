@@ -58,7 +58,11 @@ module.exports = {
  */
 async function ban(issuer, target, reason) {
   const response = await banTarget(issuer, target, reason);
-  if (typeof response === "boolean") return `${target.username} is banned!`;
+  if (typeof response === "boolean") {
+    // Send DM to the user
+    await target.send(`Hey ${target.username}, ${issuer.user.username} has banned you from ${issuer.guild.name}! You can appeal a ban in the dm's of the owner with evidence why this ban should be lifted.`);
+    return `${target.username} is banned!`;
+  }
   if (response === "BOT_PERM") return `I do not have permission to ban ${target.username}`;
   else if (response === "MEMBER_PERM") return `You do not have permission to ban ${target.username}`;
   else return `Failed to ban ${target.username}`;
