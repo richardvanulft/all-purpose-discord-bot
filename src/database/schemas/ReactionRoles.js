@@ -5,11 +5,18 @@ const reqString = {
   required: true,
 };
 
+const reqBoolean = {
+  type: Boolean,
+  required: true,
+  default: false,
+};
+
 const Schema = new mongoose.Schema(
   {
     guild_id: reqString,
     channel_id: reqString,
     message_id: reqString,
+    allow_multiple_roles: reqBoolean,
     roles: [
       {
         _id: false,
@@ -59,6 +66,15 @@ module.exports = {
   },
 
   getReactionRoles: (guildId, channelId, messageId) => rrCache.get(getKey(guildId, channelId, messageId)) || [],
+
+  getallReactionRoles: async () => {
+    try {
+      const allReactionRoles = await Model.find();
+      return allReactionRoles;
+    } catch (error) {
+      console.error("Er is een fout opgetreden bij het ophalen van alle reaction roles:", error);
+    }
+  },
 
   addReactionRole: async (guildId, channelId, messageId, emote, roleId) => {
     const filter = { guild_id: guildId, channel_id: channelId, message_id: messageId };

@@ -53,10 +53,8 @@ module.exports = {
 async function warn(issuer, target, reason) {
   const response = await warnTarget(issuer, target, reason);
   if (typeof response === "boolean") {
-    // Fetch the list of warnings the user has
-    const warnings = await listWarnings(target, { guildId: issuer.guild.id });
     // Send DM to the user
-    await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has warned you in ${issuer.guild.name} for the following reason: ${reason}. Here are your current warnings:\n${warnings.embeds[0].description}`);
+    await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has warned you in ${issuer.guild.name} for the following reason: ${reason}.`);
     return `${target.user.username} is warned!`;
   }
   if (response === "BOT_PERM") return `I do not have permission to warn ${target.user.username}`;

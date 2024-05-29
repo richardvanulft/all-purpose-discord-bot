@@ -5,7 +5,7 @@ module.exports = {
     DEFAULT_PREFIX: "!", // Default prefix for the bot
   },
   INTERACTIONS: {
-    SLASH: false, // Should the interactions be enabled
+    SLASH: true, // Should the interactions be enabled
     CONTEXT: false, // Should contexts be enabled
     GLOBAL: false, // Should the interactions be registered globally
     TEST_GUILD_ID: "1236968900516646973", // Guild ID where the interactions should be registered. [** Test you commands here first **]
@@ -42,7 +42,7 @@ module.exports = {
   },
 
   MUSIC: {
-    ENABLED: true,
+    ENABLED: false,
     IDLE_TIME: 60, // Time in seconds before the bot disconnects from an idle voice channel
     MAX_SEARCH_RESULTS: 5,
     DEFAULT_SOURCE: "SC", // YT = Youtube, YTM = Youtube Music, SC = SoundCloud
@@ -103,7 +103,7 @@ module.exports = {
   STATS: {
     ENABLED: true,
     XP_COOLDOWN: 5, // Cooldown in seconds between messages
-    DEFAULT_LVL_UP_MSG: "{member:tag}, Je bent nu **Level {level}**",
+    DEFAULT_LVL_UP_MSG: "{member:mention}, Je bent nu **Level {level}**",
   },
 
   SUGGESTIONS: {

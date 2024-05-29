@@ -100,7 +100,7 @@ async function getXpLeaderboard({ guild }, author, settings) {
   for (let i = 0; i < lb.length; i++) {
     try {
       const user = await author.client.users.fetch(lb[i].member_id);
-      collector += `**#${(i + 1).toString()}** - ${escapeInlineCode(user.tag)}\n`;
+      collector += `**#${(i + 1).toString()}** - ${escapeInlineCode(user.username)}\n`;
     } catch (ex) {
       // Ignore
     }

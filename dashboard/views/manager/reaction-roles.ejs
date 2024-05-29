@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../includes/head') %>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper">
+
+    <!-- The header is the topbar -->
+    <%- include('../includes/header') %>
+
+    <!-- The sidebar includes the menu -->
+    <%- include('../includes/sidebar') %>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h3> Basic </h3>
+            <ol class="breadcrumb">
+                <li><a href="/"><i class="fa fa-home"></i>Selector</a></li>
+                <li><a href="<%= `/manage/${guild.id}/`; %>"><%= guild.name; %></a></li>
+                <li class="active">Basic</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="row">
+                <!-- REACTION ROLES CONFIGURATION -->
+                <div class="box box-warning">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Reaction Roles</h3>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Channel</th>
+                                <th>Message ID</th>
+                                <th>Roles</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% reactionRoles.forEach(function(role) { %>
+                                <tr>
+                                    <td><%= bot.channels.cache.get(role.channel_id).name; %></td>
+                                    <td><%= role.message_id; %></td>
+                                    <td>
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>Emoji</th>
+                                                <th>Role</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <% role.roles.forEach(function(roleDetail) { %>
+                                                <tr>
+                                                    <td><%= roleDetail.emote; %></td>
+                                                    <td><%= bot.guilds.cache.get(guild.id).roles.cache.get(roleDetail.role_id).name; %></td>
+                                                </tr>
+                                            <% }); %>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END: REACTION ROLES CONFIGURATION -->
+            </div>
+        </section>
+
+        <!-- Footer includes credits and version -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <%- include('../includes/footer') %>
+</div>
+<!-- ./wrapper -->
+</body>
+</html>

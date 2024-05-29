@@ -1,5 +1,5 @@
 const { banTarget } = require("@helpers/ModUtils");
-const { ApplicationCommandOptionType } = require("discord.js");
+const { ApplicationCommandOptionType, DiscordAPIError } = require("discord.js");
 
 /**
  * @type {import("@structures/Command")}
@@ -57,10 +57,20 @@ module.exports = {
  * @param {string} reason
  */
 async function ban(issuer, target, reason) {
+  try {
+    // Attempt to send a DM to the user
+    await target.send(`Hey ${target.username}, ${issuer.user.username} has banned you from ${issuer.guild.name}! You can appeal a ban in the dm's of the owner with evidence why this ban should be lifted.`);
+  } catch (error) {
+    if (error instanceof DiscordAPIError && error.code === 50007) {
+      // The user has closed their DMs
+      return `Failed to send a DM to ${target.username} because they have closed their DMs.`;
+    }
+    // Some other error occurred
+    throw error;
+  }
+
   const response = await banTarget(issuer, target, reason);
   if (typeof response === "boolean") {
-    // Send DM to the user
-    await target.send(`Hey ${target.username}, ${issuer.user.username} has banned you from ${issuer.guild.name}! You can appeal a ban in the dm's of the owner with evidence why this ban should be lifted.`);
     return `${target.username} is banned!`;
   }
   if (response === "BOT_PERM") return `I do not have permission to ban ${target.username}`;

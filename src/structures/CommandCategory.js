@@ -12,11 +12,6 @@ module.exports = {
     image: "https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/Settings-icon.png",
     emoji: "🤖",
   },
-  FUN: {
-    name: "Fun",
-    image: "https://icons.iconarchive.com/icons/flameia/aqua-smiles/128/make-fun-icon.png",
-    emoji: "😂",
-  },
   GIVEAWAY: {
     name: "Giveaway",
     enabled: config.GIVEAWAYS.ENABLED,
@@ -45,12 +40,6 @@ module.exports = {
     enabled: config.MODERATION.ENABLED,
     image: "https://icons.iconarchive.com/icons/lawyerwordpress/law/128/Gavel-Law-icon.png",
     emoji: "🔨",
-  },
-  MUSIC: {
-    name: "Music",
-    enabled: config.MUSIC.ENABLED,
-    image: "https://icons.iconarchive.com/icons/wwalczyszyn/iwindows/256/Music-Library-icon.png",
-    emoji: "🎵",
   },
   OWNER: {
     name: "Owner",
