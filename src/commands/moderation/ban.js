@@ -63,10 +63,11 @@ async function ban(issuer, target, reason) {
   } catch (error) {
     if (error instanceof DiscordAPIError && error.code === 50007) {
       // The user has closed their DMs
-      return `Failed to send a DM to ${target.username} because they have closed their DMs.`;
+      await issuer.send(`Failed to send a DM to ${target.username} because they have closed their DMs.`);
+    } else {
+      // Some other error occurred
+      throw error;
     }
-    // Some other error occurred
-    throw error;
   }
 
   const response = await banTarget(issuer, target, reason);
