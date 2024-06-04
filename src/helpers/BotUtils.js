@@ -1,5 +1,6 @@
 const { getJson } = require("@helpers/HttpUtils");
 const { success, warn, error } = require("@helpers/Logger");
+const { exec } = require('child_process');
 
 module.exports = class BotUtils {
   function;
@@ -36,7 +37,7 @@ module.exports = class BotUtils {
   }
 
   pullLatestUpdate(client) {
-    exec(`git pull ${process.env.REPO_URL}`, (error, stdout, stderr) => {
+    exec(`git fetch origin && git reset --hard origin/main`, (error, stdout, stderr) => {
       if (error) {
         client.logger.error(`Error pulling updates: ${error.message}`);
         return;
