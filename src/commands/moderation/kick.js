@@ -51,9 +51,25 @@ module.exports = {
   },
 };
 
+const { DiscordAPIError } = require("discord.js");
+
 async function kick(issuer, target, reason) {
+  try {
+    // Attempt to send a DM to the user
+    await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has kicked you from ${issuer.guild.name}! Try to behave in the future to avoid this.`);
+  } catch (error) {
+    if (error instanceof DiscordAPIError && error.code === 50007) {
+      // The user has closed their DMs
+      return `Failed to send a DM to ${target.user.username} because they have closed their DMs.`;
+    }
+    // Some other error occurred
+    throw error;
+  }
+
   const response = await kickTarget(issuer, target, reason);
-  if (typeof response === "boolean") return `${target.user.username} is kicked!`;
+  if (typeof response === "boolean") {
+    return `${target.user.username} is kicked!`;
+  }
   if (response === "BOT_PERM") return `I do not have permission to kick ${target.user.username}`;
   else if (response === "MEMBER_PERM") return `You do not have permission to kick ${target.user.username}`;
   else return `Failed to kick ${target.user.username}`;

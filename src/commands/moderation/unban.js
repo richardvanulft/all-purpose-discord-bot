@@ -3,7 +3,7 @@ const {
   ActionRowBuilder,
   StringSelectMenuBuilder,
   ApplicationCommandOptionType,
-  ComponentType,
+  ComponentType, DiscordAPIError,
 } = require("discord.js");
 
 /**
@@ -108,18 +108,60 @@ async function waitForBan(issuer, reason, sent) {
     componentType: ComponentType.StringSelect,
   });
 
-  //
   collector.on("collect", async (response) => {
     const userId = response.values[0];
     const user = await issuer.client.users.fetch(userId, { cache: true });
 
     const status = await unBanTarget(issuer, user, reason);
-    if (typeof status === "boolean") return sent.edit({ content: `${user.username} is un-banned!`, components: [] });
-    else return sent.edit({ content: `Failed to unban ${user.username}`, components: [] });
+    if (typeof status === "boolean") {
+      try {
+        // Attempt to send a DM to the user
+        await user.send(`Hey ${user.username}, ${issuer.user.username} has unbanned you from ${issuer.guild.name}! Welcome back :D!`);
+        try {
+          return sent.edit({ content: `${user.username} is un-banned!`, components: [] });
+        } catch (error) {
+          if (error instanceof DiscordAPIError && error.code === 10008) {
+            console.log(`Unable to edit message because it no longer exists.`);
+          } else {
+            // Handle any other errors
+            throw error;
+          }
+        }
+      } catch (error) {
+        if (error instanceof DiscordAPIError && error.code === 50007) {
+          // The user has closed their DMs
+          return sent.edit({ content: `${user.username} is un-banned! Failed to send a DM because they have closed their DMs.`, components: [] });
+        }
+        // Some other error occurred
+        throw error;
+      }
+    }
+    else {
+      try {
+        return sent.edit({ content: `Failed to unban ${user.username}`, components: [] });
+      } catch (error) {
+        if (error instanceof DiscordAPIError && error.code === 10008) {
+          console.log(`Unable to edit message because it no longer exists.`);
+        } else {
+          // Handle any other errors
+          throw error;
+        }
+      }
+    }
   });
 
-  // collect user and unban
   collector.on("end", async (collected) => {
-    if (collected.size === 0) return sent.edit("Oops! Timed out. Try again later.");
+    if (collected.size === 0) {
+      try {
+        return sent.edit("Oops! Timed out. Try again later.");
+      } catch (error) {
+        if (error instanceof DiscordAPIError && error.code === 10008) {
+          console.log(`Unable to edit message because it no longer exists.`);
+        } else {
+          // Handle any other errors
+          throw error;
+        }
+      }
+    }
   });
 }

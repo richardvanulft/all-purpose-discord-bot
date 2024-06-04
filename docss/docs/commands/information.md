@@ -5,7 +5,7 @@ description: 11 commands
 # 🪧 Information
 
 | Command                    | Slash             | Description                                                |
-| -------------------------- | ----------------- | ---------------------------------------------------------- |
+|----------------------------|-------------------|------------------------------------------------------------|
 | **!botinvite**             | **/bot invite**   | get bot's invite                                           |
 | **!botstats**              | **/bot stats**    | get bot's statistics                                       |
 | **!uptime**                | **/bot uptime**   | get bot's uptime                                           |

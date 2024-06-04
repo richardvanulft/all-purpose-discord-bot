@@ -21,7 +21,7 @@
             <h3> Basic </h3>
             <ol class="breadcrumb">
                 <li><a href="/"><i class="fa fa-home"></i>Selector</a></li>
-                <li><a href="<%= `/manage/${guild.id}/` ;%>"><%= guild.name ;%></a></li>
+                <li><a href="<%= `/manage/${guild.id}/`; %>"><%= guild.name; %></a></li>
                 <li class="active">Basic</li>
             </ol>
         </section>
@@ -45,8 +45,8 @@
                             <tbody>
                             <% reactionRoles.forEach(function(role) { %>
                                 <tr>
-                                    <td><%= bot.channels.cache.get(role.channel_id).name ;%></td>
-                                    <td><%= role.message_id ;%></td>
+                                    <td><%= bot.channels.cache.get(role.channel_id).name; %></td>
+                                    <td><%= role.message_id; %></td>
                                     <td>
                                         <table class="table">
                                             <thead>
@@ -58,8 +58,8 @@
                                             <tbody>
                                             <% role.roles.forEach(function(roleDetail) { %>
                                                 <tr>
-                                                    <td><%= roleDetail.emote ;%></td>
-                                                    <td><%= bot.guilds.cache.get(guild.id).roles.cache.get(roleDetail.role_id).name ;%></td>
+                                                    <td><%= roleDetail.emote; %></td>
+                                                    <td><%= bot.guilds.cache.get(guild.id).roles.cache.get(roleDetail.role_id).name; %></td>
                                                 </tr>
                                             <% }); %>
                                             </tbody>
