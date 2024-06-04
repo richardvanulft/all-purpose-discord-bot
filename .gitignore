@@ -1,4 +1,6 @@
 
-
+.npm
 .env
 node_modules
+.idea
+.vscode

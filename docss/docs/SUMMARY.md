@@ -9,7 +9,6 @@
     - [🪧 Information](commands/information.md)
     - [📨 Invites](commands/invites.md)
     - [🔨 Moderation](commands/moderation.md)
-    - [🎵 Music](commands/music.md)
     - [🔏 Owner](commands/owner.md)
     - [🧑 Social](commands/social.md)
     - [📈 Stats](commands/stats.md)
