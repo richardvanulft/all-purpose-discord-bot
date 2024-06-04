@@ -108,17 +108,19 @@ async function waitForBan(issuer, reason, sent) {
     componentType: ComponentType.StringSelect,
   });
 
-  //
   collector.on("collect", async (response) => {
     const userId = response.values[0];
     const user = await issuer.client.users.fetch(userId, { cache: true });
 
     const status = await unBanTarget(issuer, user, reason);
-    if (typeof status === "boolean") return sent.edit({ content: `${user.username} is un-banned!`, components: [] });
+    if (typeof status === "boolean") {
+      // Send DM to the user
+      await user.send(`Hey ${user.username}, ${issuer.user.username} has unbanned you from ${issuer.guild.name}! Welcome back :D!`);
+      return sent.edit({ content: `${user.username} is un-banned!`, components: [] });
+    }
     else return sent.edit({ content: `Failed to unban ${user.username}`, components: [] });
   });
 
-  // collect user and unban
   collector.on("end", async (collected) => {
     if (collected.size === 0) return sent.edit("Oops! Timed out. Try again later.");
   });

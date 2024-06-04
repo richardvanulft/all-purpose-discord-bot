@@ -5,7 +5,7 @@ description: 10 commands
 # 📨 Invites
 
 | Command                                | Slash                  | Description                                                 |
-| -------------------------------------- | ---------------------- | ----------------------------------------------------------- |
+|----------------------------------------|------------------------|-------------------------------------------------------------|
 | **!invitetracker \<on\|off>**          | **/invitesimport**     | add existing guild invites to users                         |
 | **!invitecodes \[member]**             | **/invitecodes**       | list all your invites codes in this guild                   |
 | **!inviter \[member]**                 | **/inviter**           | shows inviter information                                   |

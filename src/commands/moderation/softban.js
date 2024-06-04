@@ -53,7 +53,11 @@ module.exports = {
 
 async function softban(issuer, target, reason) {
   const response = await softbanTarget(issuer, target, reason);
-  if (typeof response === "boolean") return `${target.user.username} is soft-banned!`;
+  if (typeof response === "boolean") {
+    // Send DM to the user
+    await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has softbanned you from ${issuer.guild.name}! Try to behave in the future to avoid this.`);
+    return `${target.user.username} is soft-banned!`;
+  }
   if (response === "BOT_PERM") return `I do not have permission to softban ${target.user.username}`;
   else if (response === "MEMBER_PERM") return `You do not have permission to softban ${target.user.username}`;
   else return `Failed to softban ${target.user.username}`;

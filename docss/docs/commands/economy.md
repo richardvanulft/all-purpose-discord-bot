@@ -5,7 +5,7 @@ description: 7 commands
 # 🪙 Economy
 
 | Command                                | Slash              | Description                           |
-| -------------------------------------- | ------------------ | ------------------------------------- |
+|----------------------------------------|--------------------|---------------------------------------|
 | **!bank balance**                      | **/bank balance**  | check your coin balance               |
 | **!bank deposit \<amount>**            | **/bank deposit**  | deposit coins to your bank account    |
 | **!bank withdraw \<amount>**           | **/bank withdraw** | withdraw coins from your bank account |

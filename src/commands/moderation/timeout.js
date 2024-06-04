@@ -73,7 +73,11 @@ module.exports = {
 async function timeout(issuer, target, ms, reason) {
   if (isNaN(ms)) return "Please provide a valid duration. Example: 1d/1h/1m/1s";
   const response = await timeoutTarget(issuer, target, ms, reason);
-  if (typeof response === "boolean") return `${target.user.username} is timed out!`;
+  if (typeof response === "boolean") {
+    // Send DM to the user
+    await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has given you a timeout in ${issuer.guild.name} for ${ms} milliseconds! Try to behave in the future to avoid this.`);
+    return `${target.user.username} is timed out!`;
+  }
   if (response === "BOT_PERM") return `I do not have permission to timeout ${target.user.username}`;
   else if (response === "MEMBER_PERM") return `You do not have permission to timeout ${target.user.username}`;
   else if (response === "ALREADY_TIMEOUT") return `${target.user.username} is already timed out!`;

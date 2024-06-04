@@ -5,7 +5,7 @@ description: 7 commands
 # 🎉 Giveaways
 
 | Command / Slash                   | Description              |
-| --------------------------------- | ------------------------ |
+|-----------------------------------|--------------------------|
 | **!giveaway start \<#channel>**   | setup a new giveaway     |
 | **!giveaway pause \<messageId>**  | pause a giveaway         |
 | **!giveaway resume \<messageId>** | resume a paused giveaway |

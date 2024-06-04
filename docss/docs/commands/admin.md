@@ -17,7 +17,8 @@ These commands can only be used by members who have **MANAGE_SERVER** permission
 ### Automoderation
 
 {% hint style="info" %}
-By default, Auto moderation events are ignored for members who have the following permissions since they are assumed to be channel/server moderators
+By default, Auto moderation events are ignored for members who have the following permissions since they are assumed to
+be channel/server moderators
 
 **KICK_MEMBERS**, **BAN_MEMBERS**, **MANAGE_GUILD**, **MANAGE_MESSAGES**
 
@@ -25,7 +26,7 @@ By default, Auto moderation events are ignored for members who have the followin
 {% endhint %}
 
 |                                                 |                                                                |
-| ----------------------------------------------- | -------------------------------------------------------------- |
+|-------------------------------------------------|----------------------------------------------------------------|
 | **!automodconfig status**                       | view configuration status                                      |
 | **!automodconfig strikes \<amount>**            | set the maximum number of strikes before taking an action      |
 | **!automodconfig action \<timeout\|mute\|ban>** | set the action to be performed after receiving maximum strikes |
@@ -37,7 +38,7 @@ By default, Auto moderation events are ignored for members who have the followin
 **Settings**
 
 | Name                                          | Description                                                                 |
-| --------------------------------------------- | --------------------------------------------------------------------------- |
+|-----------------------------------------------|-----------------------------------------------------------------------------|
 | **!anti ghostping \<on\|off>**                | logs ghost mentions in your server (Requires `/modlog` channel to be setup) |
 | **!anti spam \<on\|off>**                     | enable or disable antispam detection                                        |
 | **!anti massmention \<on\|off> \[threshold]** | enable or disable massmention detection (default threshold is 3 mentions]   |
@@ -45,14 +46,15 @@ By default, Auto moderation events are ignored for members who have the followin
 **Autodelete**
 
 | Name                                   | Description                                                                 |
-| -------------------------------------- | --------------------------------------------------------------------------- |
+|----------------------------------------|-----------------------------------------------------------------------------|
 | **!autodelete attachments \<on\|off>** | logs ghost mentions in your server (Requires `/modlog` channel to be setup) |
 | **!autodelete invites \<on\|off>**     | allow or disallow sending discord invites in message                        |
 | **!automod links \<on\|off>**          | allow or disallow sending links in message                                  |
 | **!automod maxlines \<amount>**        | sets maximum lines allowed per message                                      |
 
 {% hint style="warning" %}
-Each time a member tries to break the automated rule, he/she **receives a strike**. After receiving the maximum number of strikes (default 10), the moderation action (default TIMEOUT) is performed on them
+Each time a member tries to break the automated rule, he/she **receives a strike**. After receiving the maximum number
+of strikes (default 10), the moderation action (default TIMEOUT) is performed on them
 {% endhint %}
 
 ### Channels Counters
@@ -60,9 +62,9 @@ Each time a member tries to break the automated rule, he/she **receives a strike
 - **Description:** setup counter channel in the guild
 - **Usage**: `!counter <counter_type> <name>`
 - **Available counters** **types**
-  - USERS: counts the total server member count (members + bots)
-  - MEMBERS: counts the total member count
-  - BOTS: counts the total number of bots
+    - USERS: counts the total server member count (members + bots)
+    - MEMBERS: counts the total member count
+    - BOTS: counts the total number of bots
 
 ### Warnings
 
@@ -80,7 +82,8 @@ Moderation logging enable logging of all **moderation actions** and **automod ev
 
 ### Flag Translations
 
-_Enabling this feature will allow members to simply react to any message with a country flag emoji, translating that message content to regional language_
+_Enabling this feature will allow members to simply react to any message with a country flag emoji, translating that
+message content to regional language_
 
 - **Description**: configure flag translation in the server
 - **Usage**: `!flagtr <on|off>`
