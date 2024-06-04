@@ -1,6 +1,7 @@
 const { warnTarget } = require("@helpers/ModUtils");
 const { ApplicationCommandOptionType } = require("discord.js");
 const { listWarnings } = require("./warnings");
+const Warning = require("@schemas/warn");
 /**
  * @type {import("@structures/Command")}
  */
@@ -55,6 +56,16 @@ async function warn(issuer, target, reason) {
   if (typeof response === "boolean") {
     // Send DM to the user
     await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has warned you in ${issuer.guild.name} for the following reason: ${reason}.`);
+
+    // Save the warning in the database
+    const warning = new Warning({
+      userId: target.id,
+      guildId: issuer.guild.id,
+      issuerId: issuer.id,
+      reason: reason,
+    });
+    await warning.save();
+
     return `${target.user.username} is warned!`;
   }
   if (response === "BOT_PERM") return `I do not have permission to warn ${target.user.username}`;

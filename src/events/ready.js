@@ -2,6 +2,29 @@ const { counterHandler, inviteHandler, presenceHandler } = require("@src/handler
 const { cacheReactionRoles } = require("@schemas/ReactionRoles");
 const { getSettings } = require("@schemas/Guild");
 
+const cron = require('node-cron');
+const Warning = require('@schemas/warn');
+const { TextChannel } = require('discord.js');
+
+cron.schedule('0 0 * * *', async () => {
+  const oneYearAgo = new Date();
+  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+
+  // Fetch warnings that are older than one year
+  const expiredWarnings = await Warning.find({ timestamp: { $lt: oneYearAgo } });
+
+  // Remove warnings that are older than one year
+  await Warning.deleteMany({ timestamp: { $lt: oneYearAgo } });
+
+  // Send a message to the channel with the details of the expired warnings
+  const channel = client.channels.cache.get('1236968901321953296');
+  if (channel instanceof TextChannel) {
+    for (const warning of expiredWarnings) {
+      await channel.send(`Warning for user ${warning.userId} has expired. Reason: ${warning.reason}`);
+    }
+  }
+});
+
 /**
  * @param {import('@src/structures').BotClient} client
  */
