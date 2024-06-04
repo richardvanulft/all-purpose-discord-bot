@@ -27,7 +27,6 @@ module.exports = {
   },
 
   // PLUGINS
-
   AUTOMOD: {
     ENABLED: true,
     LOG_EMBED: "#36393F",
