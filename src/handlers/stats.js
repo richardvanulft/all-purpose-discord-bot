@@ -5,6 +5,7 @@ const cooldownCache = new Map();
 const voiceStates = new Map();
 
 const xpToAdd = () => getRandomInt(19) + 1;
+const XP_PER_HOUR = 10;
 
 /**
  * @param {string} content
@@ -34,8 +35,6 @@ module.exports = {
     const statsDb = await getMemberStats(message.guildId, message.member.id);
     if (isCommand) statsDb.commands.prefix++;
     statsDb.messages++;
-
-    // TODO: Ignore possible bot commands
 
     // Cooldown check to prevent Message Spamming
     const key = `${message.guildId}|${message.member.id}`;
@@ -113,6 +112,12 @@ module.exports = {
       if (voiceStates.has(member.id)) {
         const time = now - voiceStates.get(member.id);
         statsDb.voice.time += time / 1000; // add time in seconds
+
+        // Calculate XP gained from voice time
+        const voiceTimeInHours = time / 1000 / 60 / 60;
+        const xpGained = voiceTimeInHours * XP_PER_HOUR; // XP_PER_HOUR is the amount of XP gained per hour in voice chat
+        statsDb.xp += xpGained;
+
         await statsDb.save();
         voiceStates.delete(member.id);
       }
