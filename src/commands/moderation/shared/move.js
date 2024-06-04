@@ -1,4 +1,4 @@
-const { moveTarget } = require("../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils");
+const { moveTarget } = require("@helpers/ModUtils");
 
 module.exports = async ({ member }, target, reason, channel) => {
   const response = await moveTarget(member, target, reason, channel);
