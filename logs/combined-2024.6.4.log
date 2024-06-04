@@ -103,3 +103,372 @@
 {"level":30,"time":1717491901223,"pid":27191,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
 {"level":30,"time":1717491901511,"pid":27191,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
 {"level":50,"time":1717491936130,"pid":27191,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Cannot send messages to this user","stack":"DiscordAPIError[50007]: Cannot send messages to this user\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async DMChannel.send (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/structures/interfaces/TextBasedChannel.js:162:15)\n    at async InteractionCollector.<anonymous> (/Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/unban.js:118:7)","requestBody":{"files":[],"json":{"content":"Hey richardvanulft2_43905, richardvanulft has unbanned you from Gray Zone Warfare NL! Welcome back :D!","tts":false,"allowed_mentions":{"replied_user":false}}},"rawError":{"message":"Cannot send messages to this user","code":50007},"code":50007,"status":403,"method":"POST","url":"https://discord.com/api/v10/channels/1247473138028249088/messages"},"msg":"Unhandled exception: Cannot send messages to this user"}
+{"level":30,"time":1717493438261,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1717493438263,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1717493438263,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1717493438263,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1717493438337,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":50,"time":1717493438444,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/flip.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717493438948,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/snake.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717493438954,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/together.js Reason: Not a valid category FUN"}
+{"level":20,"time":1717493438988,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1717493438990,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1717493438992,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1717493439003,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1717493439007,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1717493439009,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1717493439012,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1717493439013,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1717493439022,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1717493439023,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1717493439024,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1717493439048,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1717493439048,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1717493439062,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1717493439063,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":50,"time":1717493439065,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717493439066,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1717493439067,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1717493439068,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1717493439068,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1717493439071,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1717493439072,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1717493439074,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":50,"time":1717493439077,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":50,"time":1717493439079,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717493439088,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1717493439089,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1717493439090,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1717493439107,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 72 commands"}
+{"level":30,"time":1717493439108,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 54 slash commands"}
+{"level":30,"time":1717493439108,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1717493439110,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1717493439110,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1717493439110,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1717493439146,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1717493439523,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date. Current version is 0.6.0"}
+{"level":30,"time":1717493439523,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1717493439640,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1717493440063,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1717493440081,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1717493440915,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1717493440915,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1717493440945,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1717493441277,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
+{"level":50,"time":1717493449541,"pid":44785,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"TypeError","message":"Cannot read properties of null (reading 'toLowerCase')","stack":"TypeError: Cannot read properties of null (reading 'toLowerCase')\n    at getMatchingBans (/Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/unban.js:79:56)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.interactionRun (/Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/unban.js:55:22)\n    at async Object.handleSlashCommand (/Users/stagiairgaaf/Documents/Development/discord-bot/src/handlers/command.js:140:7)\n    at async module.exports (/Users/stagiairgaaf/Documents/Development/discord-bot/src/events/interactions/interactionCreate.js:18:5)"},"msg":"interactionRun: Cannot read properties of null (reading 'toLowerCase')"}
+{"level":30,"time":1717493669034,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1717493669036,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1717493669036,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1717493669036,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1717493669072,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":50,"time":1717493669128,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/flip.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717493669432,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/snake.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717493669434,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/together.js Reason: Not a valid category FUN"}
+{"level":20,"time":1717493669445,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1717493669445,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1717493669446,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1717493669451,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1717493669453,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1717493669454,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1717493669456,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1717493669457,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1717493669465,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1717493669466,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1717493669467,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1717493669469,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1717493669470,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1717493669479,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1717493669480,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":50,"time":1717493669482,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717493669483,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1717493669483,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1717493669484,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1717493669484,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1717493669485,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1717493669486,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1717493669487,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":50,"time":1717493669488,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":50,"time":1717493669490,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717493669498,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1717493669499,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1717493669499,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1717493669516,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 72 commands"}
+{"level":30,"time":1717493669516,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 54 slash commands"}
+{"level":30,"time":1717493669516,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1717493669517,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1717493669517,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1717493669517,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1717493669566,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1717493669857,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date. Current version is 0.6.0"}
+{"level":30,"time":1717493669859,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1717493670133,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1717493670651,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1717493670662,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1717493671417,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1717493671417,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1717493671441,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1717493671816,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
+{"level":50,"time":1717493690384,"pid":46103,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Unknown Message","stack":"DiscordAPIError[10008]: Unknown Message\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async MessageManager.edit (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/managers/MessageManager.js:176:15)","requestBody":{"files":[],"json":{"content":"richardvanulft2_43905 is un-banned! Failed to send a DM because they have closed their DMs.","tts":false,"components":[],"allowed_mentions":{"replied_user":false},"flags":64}},"rawError":{"message":"Unknown Message","code":10008},"code":10008,"status":404,"method":"PATCH","url":"https://discord.com/api/v10/channels/1236968901321953299/messages/1247483683380920375"},"msg":"Unhandled exception: Unknown Message"}
+{"level":30,"time":1717493794207,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1717493794208,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1717493794208,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1717493794208,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1717493794261,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":50,"time":1717493794321,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/flip.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717493794609,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/snake.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717493794610,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/together.js Reason: Not a valid category FUN"}
+{"level":20,"time":1717493794621,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1717493794621,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1717493794622,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1717493794626,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1717493794627,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1717493794629,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1717493794630,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1717493794631,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1717493794639,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1717493794640,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1717493794641,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1717493794643,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1717493794644,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1717493794653,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1717493794655,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":50,"time":1717493794656,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717493794657,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1717493794657,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1717493794658,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1717493794658,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1717493794659,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1717493794661,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1717493794662,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":50,"time":1717493794663,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":50,"time":1717493794665,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717493794672,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1717493794673,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1717493794674,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1717493794690,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 72 commands"}
+{"level":30,"time":1717493794690,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 54 slash commands"}
+{"level":30,"time":1717493794690,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1717493794691,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1717493794691,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1717493794691,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1717493794722,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1717493794988,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date. Current version is 0.6.0"}
+{"level":30,"time":1717493794988,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1717493795103,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1717493795504,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1717493795515,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1717493796246,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1717493796246,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1717493796271,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1717493796583,"pid":46844,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
+{"level":30,"time":1717494017858,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1717494017861,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1717494017861,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1717494017861,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1717494017928,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":50,"time":1717494017980,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/flip.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494018261,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/snake.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494018262,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/together.js Reason: Not a valid category FUN"}
+{"level":20,"time":1717494018271,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1717494018272,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1717494018273,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1717494018277,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1717494018277,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1717494018279,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1717494018281,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1717494018282,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1717494018289,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1717494018290,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1717494018291,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1717494018293,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1717494018293,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1717494018301,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1717494018302,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":50,"time":1717494018303,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494018304,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1717494018305,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1717494018306,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1717494018307,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1717494018308,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1717494018309,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1717494018310,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":50,"time":1717494018314,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":50,"time":1717494018315,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494018320,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1717494018320,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1717494018321,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1717494018335,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 72 commands"}
+{"level":30,"time":1717494018335,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 54 slash commands"}
+{"level":30,"time":1717494018335,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1717494018336,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1717494018336,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1717494018336,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1717494018366,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1717494018642,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date. Current version is 0.6.0"}
+{"level":30,"time":1717494018642,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1717494018773,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1717494019117,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1717494019129,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1717494019790,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1717494019790,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1717494019817,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1717494020142,"pid":47889,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
+{"level":30,"time":1717494075245,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1717494075246,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1717494075246,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1717494075246,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1717494075275,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":50,"time":1717494075310,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/flip.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494075487,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/snake.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494075488,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/together.js Reason: Not a valid category FUN"}
+{"level":20,"time":1717494075495,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1717494075495,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1717494075496,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1717494075500,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1717494075500,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1717494075501,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1717494075502,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1717494075503,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1717494075511,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1717494075511,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1717494075512,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1717494075513,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1717494075513,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1717494075520,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1717494075520,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":50,"time":1717494075521,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494075522,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1717494075522,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1717494075523,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1717494075523,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1717494075524,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1717494075525,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1717494075526,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":50,"time":1717494075527,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":50,"time":1717494075528,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494075534,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1717494075535,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1717494075535,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1717494075546,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 72 commands"}
+{"level":30,"time":1717494075546,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 54 slash commands"}
+{"level":30,"time":1717494075546,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1717494075547,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1717494075547,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1717494075547,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1717494075572,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1717494075843,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date. Current version is 0.6.0"}
+{"level":30,"time":1717494075843,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1717494075941,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1717494076239,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1717494076249,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1717494076921,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1717494076921,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1717494076945,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1717494077186,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
+{"level":50,"time":1717494091324,"pid":48186,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Unknown Message","stack":"DiscordAPIError[10008]: Unknown Message\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async MessageManager.edit (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/managers/MessageManager.js:176:15)","requestBody":{"files":[],"json":{"content":"richardvanulft2_43905 is un-banned! Failed to send a DM because they have closed their DMs.","tts":false,"components":[],"allowed_mentions":{"replied_user":false},"flags":64}},"rawError":{"message":"Unknown Message","code":10008},"code":10008,"status":404,"method":"PATCH","url":"https://discord.com/api/v10/channels/1236968901321953299/messages/1247485362008489991"},"msg":"Unhandled exception: Unknown Message"}
+{"level":30,"time":1717494179422,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1717494179423,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1717494179423,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1717494179423,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1717494179454,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":50,"time":1717494179488,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/flip.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494179698,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/snake.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494179699,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/together.js Reason: Not a valid category FUN"}
+{"level":20,"time":1717494179707,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1717494179708,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1717494179709,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1717494179713,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1717494179714,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1717494179715,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1717494179716,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1717494179717,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1717494179725,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1717494179726,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1717494179726,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1717494179727,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1717494179728,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1717494179734,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1717494179735,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":50,"time":1717494179736,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494179736,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1717494179737,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1717494179737,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1717494179737,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1717494179738,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1717494179739,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1717494179739,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":50,"time":1717494179740,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":50,"time":1717494179742,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494179749,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1717494179749,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1717494179749,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1717494179760,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 72 commands"}
+{"level":30,"time":1717494179760,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 54 slash commands"}
+{"level":30,"time":1717494179761,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1717494179762,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1717494179762,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1717494179762,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1717494179790,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1717494180134,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date. Current version is 0.6.0"}
+{"level":30,"time":1717494180134,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1717494180220,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1717494180592,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1717494180603,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1717494181277,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1717494181277,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1717494181302,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1717494181560,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
+{"level":50,"time":1717494233872,"pid":48663,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Unknown Message","stack":"DiscordAPIError[10008]: Unknown Message\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async MessageManager.edit (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/managers/MessageManager.js:176:15)","requestBody":{"files":[],"json":{"content":"richardvanulft2_43905 is un-banned! Failed to send a DM because they have closed their DMs.","tts":false,"components":[],"allowed_mentions":{"replied_user":false},"flags":64}},"rawError":{"message":"Unknown Message","code":10008},"code":10008,"status":404,"method":"PATCH","url":"https://discord.com/api/v10/channels/1236968901321953299/messages/1247485963400380478"},"msg":"Unhandled exception: Unknown Message"}
+{"level":30,"time":1717494361418,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Validating config file and environment variables"}
+{"level":40,"time":1717494361419,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"config.js: SUPPORT_SERVER is not provided"}
+{"level":40,"time":1717494361419,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1717494361419,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1717494361448,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading commands..."}
+{"level":50,"time":1717494361481,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/flip.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494361654,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/snake.js Reason: Not a valid category FUN"}
+{"level":50,"time":1717494361655,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/fun/together.js Reason: Not a valid category FUN"}
+{"level":20,"time":1717494361663,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command filter. Category IMAGE is disabled"}
+{"level":20,"time":1717494361664,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command generator. Category IMAGE is disabled"}
+{"level":20,"time":1717494361664,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping Command overlay. Category IMAGE is disabled"}
+{"level":20,"time":1717494361668,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1717494361669,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1717494361670,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1717494361671,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1717494361672,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1717494361678,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1717494361679,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1717494361679,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1717494361681,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1717494361682,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1717494361688,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1717494361689,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":50,"time":1717494361690,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/message/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494361691,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1717494361691,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1717494361691,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1717494361692,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1717494361693,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1717494361693,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1717494361694,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":50,"time":1717494361695,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":50,"time":1717494361696,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Failed to load /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js Reason: Cannot find module '../../../../../../../Downloads/discord-bot-0.6.0/src/helpers/ModUtils'\nRequire stack:\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/shared/move.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/commands/moderation/slash/voice.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/BotClient.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/src/structures/index.js\n- /Users/stagiairgaaf/Documents/Development/discord-bot/bot.js"}
+{"level":20,"time":1717494361699,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1717494361699,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1717494361700,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Skipping slash command listservers. Disabled!"}
+{"level":30,"time":1717494361714,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 72 commands"}
+{"level":30,"time":1717494361714,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 54 slash commands"}
+{"level":30,"time":1717494361714,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading contexts..."}
+{"level":30,"time":1717494361715,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 1 USER contexts"}
+{"level":30,"time":1717494361716,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1717494361716,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loading events..."}
+{"level":30,"time":1717494361742,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1717494362015,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"VersionCheck: Your discord bot is up to date. Current version is 0.6.0"}
+{"level":30,"time":1717494362016,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Launching dashboard"}
+{"level":30,"time":1717494362088,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1717494362433,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1717494362448,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Dashboard is listening on port 6969"}
+{"level":30,"time":1717494363118,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Logged in as Gray Zone Warfare NL#1163! (1237023654211096606)"}
+{"level":30,"time":1717494363118,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Initializing giveaways manager..."}
+{"level":30,"time":1717494363146,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1717494363379,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","msg":"Successfully registered interactions"}
+{"level":50,"time":1717494408602,"pid":49518,"hostname":"MacBook-Pro-van-Stagiair.local","err":{"type":"DiscordAPIError","message":"Unknown Message","stack":"DiscordAPIError[10008]: Unknown Message\n    at handleErrors (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:640:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async SequentialHandler.runRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1021:23)\n    at async SequentialHandler.queueRequest (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:862:14)\n    at async REST.request (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/@discordjs/rest/dist/index.js:1387:22)\n    at async MessageManager.edit (/Users/stagiairgaaf/Documents/Development/discord-bot/node_modules/discord.js/src/managers/MessageManager.js:176:15)","requestBody":{"files":[],"json":{"content":"richardvanulft2_43905 is un-banned! Failed to send a DM because they have closed their DMs.","tts":false,"components":[],"allowed_mentions":{"replied_user":false},"flags":64}},"rawError":{"message":"Unknown Message","code":10008},"code":10008,"status":404,"method":"PATCH","url":"https://discord.com/api/v10/channels/1236968901321953299/messages/1247486697089011762"},"msg":"Unhandled exception: Unknown Message"}
