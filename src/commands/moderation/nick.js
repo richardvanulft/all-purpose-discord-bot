@@ -9,7 +9,7 @@ module.exports = {
   description: "nickname commands",
   category: "MODERATION",
   botPermissions: ["ManageNicknames"],
-  userPermissions: ["ManageNicknames"],
+  userPermissions: ["KickMembers"],
   command: {
     enabled: true,
     minArgsCount: 2,
@@ -86,6 +86,12 @@ module.exports = {
   },
 
   async interactionRun(interaction) {
+    const moderatorRoleID = process.env.MODERATOR_ROLE_ID;
+
+    if (!interaction.member.roles.cache.has(moderatorRoleID)) {
+      return interaction.reply('You do not have permission to use this command.');
+    }
+
     const name = interaction.options.getString("name");
     const target = await interaction.guild.members.fetch(interaction.options.getUser("user"));
 

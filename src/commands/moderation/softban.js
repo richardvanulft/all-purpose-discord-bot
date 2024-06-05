@@ -1,9 +1,6 @@
 const { softbanTarget } = require("@helpers/ModUtils");
 const { ApplicationCommandOptionType } = require("discord.js");
 
-/**
- * @type {import("@structures/Command")}
- */
 module.exports = {
   name: "softban",
   description: "softban the specified member. Kicks and deletes messages",
@@ -25,6 +22,12 @@ module.exports = {
         required: true,
       },
       {
+        name: "duration",
+        description: "duration of the ban in minutes",
+        type: ApplicationCommandOptionType.Integer,
+        required: true,
+      },
+      {
         name: "reason",
         description: "reason for softban",
         type: ApplicationCommandOptionType.String,
@@ -42,21 +45,35 @@ module.exports = {
   },
 
   async interactionRun(interaction) {
+    const moderatorRoleID = process.env.MODERATOR_ROLE_ID;
+
+    if (!interaction.member.roles.cache.has(moderatorRoleID)) {
+      return interaction.reply('You do not have permission to use this command.');
+    }
     const user = interaction.options.getUser("user");
+    const duration = interaction.options.getInteger("duration");
     const reason = interaction.options.getString("reason");
     const target = await interaction.guild.members.fetch(user.id);
 
-    const response = await softban(interaction.member, target, reason);
+    const response = await softban(interaction.member, target, reason, duration);
     await interaction.followUp(response);
   },
 };
 
-async function softban(issuer, target, reason) {
-  const response = await softbanTarget(issuer, target, reason);
+async function softban(issuer, target, reason, duration) {
+  // Calculate the end of the ban
+  const banEnd = new Date();
+  banEnd.setMinutes(banEnd.getMinutes() + duration);
+
+  // Format the end of the ban as a Discord timestamp
+  const banEndTimestamp = `<t:${Math.floor(banEnd.getTime() / 1000)}:F>`;
+
+  // Send DM to the user
+  await target.user.send(`**Hey ${target.user.username}, \n${issuer.user.username} has softbanned you from ${issuer.guild.name} for ${duration} minutes! \nYour ban will end at ${banEndTimestamp}. \nTry to behave in the future to avoid this.**`);
+
+  const response = await softbanTarget(issuer, target, reason, duration);
   if (typeof response === "boolean") {
-    // Send DM to the user
-    await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has softbanned you from ${issuer.guild.name}! Try to behave in the future to avoid this.`);
-    return `${target.user.username} is soft-banned!`;
+    return `${target.user.username} is soft-banned for ${duration} minutes!`;
   }
   if (response === "BOT_PERM") return `I do not have permission to softban ${target.user.username}`;
   else if (response === "MEMBER_PERM") return `You do not have permission to softban ${target.user.username}`;

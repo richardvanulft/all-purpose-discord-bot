@@ -42,6 +42,12 @@ module.exports = {
   },
 
   async interactionRun(interaction) {
+    const moderatorRoleID = process.env.MODERATOR_ROLE_ID;
+
+    if (!interaction.member.roles.cache.has(moderatorRoleID)) {
+      return interaction.reply('You do not have permission to use this command.');
+    }
+
     const user = interaction.options.getUser("user");
     const reason = interaction.options.getString("reason");
     const target = await interaction.guild.members.fetch(user.id);
@@ -56,7 +62,7 @@ const { DiscordAPIError } = require("discord.js");
 async function kick(issuer, target, reason) {
   try {
     // Attempt to send a DM to the user
-    await target.user.send(`Hey ${target.user.username}, ${issuer.user.username} has kicked you from ${issuer.guild.name}! Try to behave in the future to avoid this.`);
+    await target.user.send(`Hey ${target.user.username}, \n${issuer.user.username} has kicked you from **${issuer.guild.name}**! \nTry to behave in the future to avoid this.`);
   } catch (error) {
     if (error instanceof DiscordAPIError && error.code === 50007) {
       // The user has closed their DMs

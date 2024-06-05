@@ -10,7 +10,7 @@ module.exports = {
   description: "timeouts the specified member",
   category: "MODERATION",
   botPermissions: ["ModerateMembers"],
-  userPermissions: ["ModerateMembers"],
+  userPermissions: ["KickMembers"],
   command: {
     enabled: true,
     aliases: ["mute"],
@@ -55,6 +55,11 @@ module.exports = {
   },
 
   async interactionRun(interaction) {
+    const moderatorRoleID = process.env.MODERATOR_ROLE_ID;
+
+    if (!interaction.member.roles.cache.has(moderatorRoleID)) {
+      return interaction.reply('You do not have permission to use this command.');
+    }
     const user = interaction.options.getUser("user");
 
     // parse time

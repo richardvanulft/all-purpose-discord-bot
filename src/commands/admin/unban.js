@@ -12,7 +12,7 @@ const {
 module.exports = {
   name: "unban",
   description: "unbans the specified member",
-  category: "MODERATION",
+  category: "ADMIN",
   botPermissions: ["BanMembers"],
   userPermissions: ["BanMembers"],
   command: {

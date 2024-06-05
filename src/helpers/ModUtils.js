@@ -328,15 +328,26 @@ module.exports = class ModUtils {
    * @param {import('discord.js').GuildMember} issuer
    * @param {import('discord.js').GuildMember} target
    * @param {string} reason
+   * @param duration
    */
-  static async softbanTarget(issuer, target, reason) {
+  static async softbanTarget(issuer, target, reason, duration) {
     if (!memberInteract(issuer, target)) return "MEMBER_PERM";
     if (!memberInteract(issuer.guild.members.me, target)) return "BOT_PERM";
 
     try {
       await target.ban({ deleteMessageDays: 7, reason });
-      await issuer.guild.members.unban(target.user);
       logModeration(issuer, target, reason, "Softban");
+
+      // Set a timer to unban the user after the specified duration
+      setTimeout(async () => {
+        try {
+          await issuer.guild.members.unban(target.user);
+          logModeration(issuer, target, "Unban after softban duration ended", "Unban");
+        } catch (ex) {
+          error("unbanTarget", ex);
+        }
+      }, duration * 60 * 1000);
+
       return true;
     } catch (ex) {
       error("softbanTarget", ex);

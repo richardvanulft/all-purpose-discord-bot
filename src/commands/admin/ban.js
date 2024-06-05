@@ -5,9 +5,9 @@ const { ApplicationCommandOptionType, DiscordAPIError } = require("discord.js");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "ban",
+  name: "superban",
   description: "bans the specified member",
-  category: "MODERATION",
+  category: "ADMIN",
   botPermissions: ["BanMembers"],
   userPermissions: ["BanMembers"],
   command: {

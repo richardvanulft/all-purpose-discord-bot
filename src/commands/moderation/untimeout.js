@@ -9,7 +9,7 @@ module.exports = {
   description: "remove timeout from a member",
   category: "MODERATION",
   botPermissions: ["ModerateMembers"],
-  userPermissions: ["ModerateMembers"],
+  userPermissions: ["KickMembers"],
   command: {
     enabled: true,
     aliases: ["unmute"],
@@ -43,6 +43,11 @@ module.exports = {
   },
 
   async interactionRun(interaction) {
+    const moderatorRoleID = process.env.MODERATOR_ROLE_ID;
+
+    if (!interaction.member.roles.cache.has(moderatorRoleID)) {
+      return interaction.reply('You do not have permission to use this command.');
+    }
     const user = interaction.options.getUser("user");
     const reason = interaction.options.getString("reason");
     const target = await interaction.guild.members.fetch(user.id);
