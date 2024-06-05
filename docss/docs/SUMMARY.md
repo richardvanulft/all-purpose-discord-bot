@@ -1,6 +1,5 @@
 # Table of contents
 
-- [🤖 About Me](../README.md)
 - [📘 Commands](commands/README.md)
     - [⚙ Admin](commands/admin.md)
     - [😂 Fun](commands/fun.md)
