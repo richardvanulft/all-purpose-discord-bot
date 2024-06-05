@@ -37,6 +37,7 @@ module.exports = {
     const role = interaction.options.getRole("role");
 
     const guildData = await getSettings(interaction.guild);
+    guildData.watchingchannels = guildData.watchingchannels || [];
     guildData.watchingchannels.push({
       monitoredChannelId: monitorChannel.id,
       outputChannelId: outputChannel.id,
@@ -49,13 +50,17 @@ module.exports = {
   },
 
   async messageRun(message) {
-    console.log('messageRun called');
     const guildData = await getSettings(message.guild);
     const watchChannel = guildData.watchingchannels.find(wc => wc.monitoredChannelId === message.channel.id);
     if (watchChannel) {
       const outputChannel = message.guild.channels.cache.get(watchChannel.outputChannelId);
-      if (outputChannel.type === 'GUILD_TEXT') {
-        outputChannel.send(`${message.content} <@&${watchChannel.roleId}>`);
+      if (outputChannel && outputChannel.isTextBased()) {
+        outputChannel.send({
+          content: `${message.content} <@&${watchChannel.roleId}>`,
+          allowedMentions: {
+            roles: [watchChannel.roleId],
+          },
+        });
       }
     }
   },
