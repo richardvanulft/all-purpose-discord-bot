@@ -63,7 +63,7 @@ module.exports = {
         if (!isNaN(count)) {
           // Wait for a second before sending the message
           await new Promise(resolve => setTimeout(resolve, 1000));
-          interaction.channel.send(`Successfully deleted ${count} messages.`);
+          interaction.channel.send(`Successfully deleted ${count} messages.😀👍`);
         }
       }
     }

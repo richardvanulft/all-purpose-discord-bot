@@ -116,12 +116,20 @@ async function listWarnings(target, { guildId }) {
   if (!target) return "No user provided";
   if (target.user.bot) return "Bots don't have warnings";
 
+  console.log(`Fetching warnings for guildId: ${guildId}, targetId: ${target.id}`);
   const warnings = await getWarningLogs(guildId, target.id);
+  console.log(`Fetched warnings: ${JSON.stringify(warnings)}`);
+
   if (!warnings.length) return `${target.user.username} has no warnings`;
 
-  const acc = warnings.map((warning, i) => `${i + 1}. ${warning.reason} [By ${warning.admin.username}]`).join("\n");
+  const acc = warnings.map((warning, i) => {
+    const expireDate = new Date(warning.created_at);
+    expireDate.setFullYear(expireDate.getFullYear() + 1);
+    const discordTimestamp = `<t:${Math.floor(expireDate.getTime() / 1000)}:F>`;
+    return `${i + 1}. \`\`\`${warning.reason}\`\`\` \n**By ${warning.admin.tag} Expires on ${discordTimestamp}**`;
+  }).join("\n");
   const embed = new EmbedBuilder({
-    author: { name: `${target.user.username}'s warnings` },
+    author: { name: `${target.user.displayName}'s warnings` },
     description: acc,
   });
 

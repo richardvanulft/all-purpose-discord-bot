@@ -31,7 +31,7 @@ module.exports = class BotUtils {
         }
       }
 
-      success(`VersionCheck: Your discord bot is up to date. Current version is ${latestVersion}`);
+      success(`VersionCheck: Your discord bot is up to date. Current version is ${currentVersion}`);
     }
     return false;
   }
