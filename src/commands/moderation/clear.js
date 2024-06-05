@@ -56,7 +56,7 @@ module.exports = {
             interaction.followUp("There was an error trying to prune messages in this channel!");
           }
         });
-        if (!isNaN(count)) interaction.reply(`Successfully deleted ${count} messages.`);
+        if (!isNaN(count)) interaction.followUp(`Successfully deleted ${count} messages.`);
       }
     }
   },
