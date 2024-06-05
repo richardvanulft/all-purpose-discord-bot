@@ -76,6 +76,13 @@ const Schema = new mongoose.Schema({
       channel_id: String,
     },
   ],
+  watchingchannels: [
+    {
+      monitoredChannelId: String,
+      outputChannelId: String,
+      roleId: String,
+    }
+  ],
   welcome: {
     enabled: Boolean,
     channel: String,

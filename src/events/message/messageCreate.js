@@ -33,4 +33,13 @@ module.exports = async (client, message) => {
 
   // if not a command
   if (!isCommand) await automodHandler.performAutomod(message, settings);
+
+  // message forwarding
+  const watchChannel = settings.watchingchannels.find(wc => wc.monitoredChannelId === message.channel.id);
+  if (watchChannel) {
+    const outputChannel = message.guild.channels.cache.get(watchChannel.outputChannelId);
+    if (outputChannel && outputChannel.isTextBased()) {
+      outputChannel.send(`${message.content} <@&${watchChannel.roleId}>`);
+    }
+  }
 };
