@@ -34,6 +34,9 @@ module.exports = async (client, interaction) => {
       case "TICKET_CLOSE":
         return ticketHandler.handleTicketClose(interaction);
 
+      case "TICKET_REPLY":
+        return ticketHandler.handleTicketReply(interaction);
+
       case "SUGGEST_APPROVE":
         return suggestionHandler.handleApproveBtn(interaction);
 

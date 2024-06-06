@@ -8,6 +8,7 @@ const {
   ComponentType,
 } = require("discord.js");
 const { TICKET } = require("@root/config.js");
+const { MODERATOR_ROLE_ID } = process.env;
 
 // schemas
 const { getSettings } = require("@schemas/Guild");
@@ -220,6 +221,10 @@ async function handleTicketOpen(interaction) {
         id: guild.members.me.roles.highest.id,
         allow: ["ViewChannel", "SendMessages", "ReadMessageHistory"],
       },
+      {
+        id: MODERATOR_ROLE_ID,
+        allow: ["ViewChannel", "SendMessages", "ReadMessageHistory"],
+      },
     ];
 
     if (catPerms?.length > 0) {
@@ -296,6 +301,33 @@ async function handleTicketClose(interaction) {
   }
 }
 
+async function handleTicketReply(interaction) {
+
+  await interaction.followUp({ content: 'Please enter your reply:', ephemeral: true });
+
+  const filter = m => m.author.id === interaction.user.id;
+  const collected = await interaction.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+
+  const reply = collected.first().content;
+
+  // Vraag de gebruiker om bevestiging
+  await interaction.followUp({ content: `You entered: ${reply}. Are you sure you want to send this as your reply? Please respond with 'yes' or 'no'.`, ephemeral: true });
+
+  const confirmation = await interaction.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+  const confirmationReply = confirmation.first().content.toLowerCase();
+
+  if (confirmationReply === 'yes') {
+    // De reply van de gebruiker in de ticket plaatsen
+    await interaction.channel.send(`User reply: ${reply}`);
+  } else if (confirmationReply === 'no') {
+    await interaction.followUp({ content: 'Okay, your reply has not been sent. You can enter a new reply.', ephemeral: true });
+  } else {
+    await interaction.followUp({ content: 'Invalid response. Please respond with \'yes\' or \'no\'.', ephemeral: true });
+  }
+}
+
+
+
 module.exports = {
   getTicketChannels,
   getExistingTicketChannel,
@@ -304,4 +336,5 @@ module.exports = {
   closeAllTickets,
   handleTicketOpen,
   handleTicketClose,
+  handleTicketReply,
 };

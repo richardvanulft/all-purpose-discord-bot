@@ -11,7 +11,8 @@ const {
   ComponentType,
 } = require("discord.js");
 const { EMBED_COLORS } = require("@root/config.js");
-const { isTicketChannel, closeTicket, closeAllTickets } = require("@handlers/ticket");
+const { isTicketChannel, closeTicket, closeAllTickets, handleTicketReply } = require("@handlers/ticket");
+const { postToBin } = require("@helpers/HttpUtils");
 
 /**
  * @type {import("@structures/Command")}
@@ -115,9 +116,9 @@ module.exports = {
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
-            name: "user_id",
+            name: "user",
             description: "the id of the user to add",
-            type: ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.User,
             required: true,
           },
         ],
@@ -130,6 +131,19 @@ module.exports = {
           {
             name: "user",
             description: "the user to remove",
+            type: ApplicationCommandOptionType.User,
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "ask",
+        description: "ask the reported player for their side of the story",
+        type: ApplicationCommandOptionType.Subcommand,
+        options: [
+          {
+            name: "user",
+            description: "the id of the user to ask",
             type: ApplicationCommandOptionType.User,
             required: true,
           },
@@ -202,6 +216,11 @@ module.exports = {
       else inputId = args[1];
       response = await removeFromTicket(message, inputId);
     }
+    else if (input === "ask") {
+      if (args.length < 2) return message.safeReply("Please provide a user to ask");
+      const userId = args[1];
+      response = await askPlayer(message, userId);
+    }
 
     // Invalid input
     else {
@@ -251,14 +270,28 @@ module.exports = {
 
     // Add to ticket
     else if (sub === "add") {
-      const inputId = interaction.options.getString("user_id");
-      response = await addToTicket(interaction, inputId);
+      const user = interaction.options.getUser("user");
+      response = await addToTicket(interaction, user.id);
     }
 
     // Remove from ticket
     else if (sub === "remove") {
       const user = interaction.options.getUser("user");
       response = await removeFromTicket(interaction, user.id);
+    }
+
+    // Ask player
+    else if (sub === "ask") {
+      const user = interaction.options.getUser("user");
+      response = await askPlayer(interaction, user.id);
+    }
+
+    if (interaction.isButton()) {
+      if (interaction.customId === 'TICKET_REPLY_YES') {
+        await handleTicketReply(interaction);
+      } else if (interaction.customId === 'TICKET_REPLY_NO') {
+        await handleNoReply(interaction);
+      }
     }
 
     if (response) await interaction.followUp(response);
@@ -414,4 +447,48 @@ async function removeFromTicket({ channel }, inputId) {
   } catch (ex) {
     return "Failed to remove user/role. Did you provide a valid ID?";
   }
+}
+
+async function askPlayer({ channel, guild, client }, userId) {
+  const user = await client.users.fetch(userId);
+  if (!user) return "Could not find user with that ID";
+
+  const transcript = await getTicketTranscript(channel);
+
+  const buttonRow = new ActionRowBuilder().addComponents(
+    new ButtonBuilder().setCustomId("TICKET_REPLY_YES").setLabel("Add Reply").setStyle(ButtonStyle.Success).setEmoji('✅'),
+    new ButtonBuilder().setCustomId("TICKET_REPLY_NO").setLabel("Don't Add Reply").setStyle(ButtonStyle.Danger).setEmoji('❌')
+  );
+
+  await user.send({
+    content: `You have been asked to provide your side of the story in a ticket in ${guild.name}. \n\n[Here is the transcript so far](${transcript})\n\n Please click the appropriate button below to add your reply or decline.`,
+    components: [buttonRow],
+  });
+
+  return "Asked the player for their side of the story";
+}
+
+async function handleNoReply(interaction) {
+  // Hier kun je de code plaatsen die uitgevoerd moet worden als de gebruiker op de "x" knop klikt
+  await interaction.channel.send(`User ${interaction.user.username} does not want to add a reply.`);
+}
+
+async function getTicketTranscript(channel) {
+  const messages = await channel.messages.fetch();
+  const reversed = Array.from(messages.values()).reverse();
+
+  let content = "";
+  reversed.forEach((m) => {
+    content += `[${new Date(m.createdAt).toLocaleString("en-US")}] - ${m.author.username}\n`;
+    if (m.cleanContent !== "") content += `${m.cleanContent}\n`;
+    if (m.attachments.size > 0) content += `${m.attachments.map((att) => att.proxyURL).join(", ")}\n`;
+    content += "\n";
+  });
+
+  const logs = await postToBin(content, `Ticket Logs for ${channel.name}`);
+
+  // Gebruik de `url` eigenschap van het geretourneerde object
+  const logsUrl = logs.url;
+
+  return logsUrl;
 }
