@@ -10,24 +10,24 @@ module.exports = class Validator {
 
     // Bot Token
     if (!process.env.BOT_TOKEN) {
-      error("env: BOT_TOKEN cannot be empty");
+      error(".env: BOT_TOKEN cannot be empty");
       process.exit(1);
     }
 
     // Validate Database Config
     if (!process.env.MONGO_CONNECTION) {
-      error("env: MONGO_CONNECTION cannot be empty");
+      error(".env: MONGO_CONNECTION cannot be empty");
       process.exit(1);
     }
 
     // Validate Dashboard Config
     if (config.DASHBOARD.enabled) {
       if (!process.env.BOT_SECRET) {
-        error("env: BOT_SECRET cannot be empty");
+        error(".env: BOT_SECRET cannot be empty");
         process.exit(1);
       }
       if (!process.env.SESSION_PASSWORD) {
-        error("env: SESSION_PASSWORD cannot be empty");
+        error(".env: SESSION_PASSWORD cannot be empty");
         process.exit(1);
       }
       if (!config.DASHBOARD.baseURL || !config.DASHBOARD.failureURL || !config.DASHBOARD.port) {
@@ -45,7 +45,7 @@ module.exports = class Validator {
     // Warnings
     if (config.OWNER_IDS.length === 0) warn("config.js: OWNER_IDS are empty");
     if (!config.SUPPORT_SERVER) warn("config.js: SUPPORT_SERVER is not provided");
-    if (!process.env.STRANGE_API_KEY) warn("env: STRANGE_API_KEY is missing. Image commands won't work");
+    if (!process.env.STRANGE_API_KEY) warn(".env: STRANGE_API_KEY is missing. Image commands won't work");
   }
 
   /**

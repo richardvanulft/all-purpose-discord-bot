@@ -342,7 +342,7 @@ module.exports = function (grunt) {
 
     exec: {
       browserstack: {
-        command: 'cross-env BROWSER=true karma start grunt/karma.conf.js'
+        command: 'cross-.env BROWSER=true karma start grunt/karma.conf.js'
       },
       karma: {
         command: 'karma start grunt/karma.conf.js'

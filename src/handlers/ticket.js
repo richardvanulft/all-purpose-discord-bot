@@ -8,6 +8,7 @@ const {
   ComponentType,
 } = require("discord.js");
 const { TICKET } = require("@root/config.js");
+const { MODERATOR_ROLE_ID } = process.env;
 
 // schemas
 const { getSettings } = require("@schemas/Guild");
@@ -218,6 +219,10 @@ async function handleTicketOpen(interaction) {
       },
       {
         id: guild.members.me.roles.highest.id,
+        allow: ["ViewChannel", "SendMessages", "ReadMessageHistory"],
+      },
+              {
+        id: MODERATOR_ROLE_ID,
         allow: ["ViewChannel", "SendMessages", "ReadMessageHistory"],
       },
     ];
